@@ -36,6 +36,32 @@ class Category extends Model
         static::saving(function (Category $category) {
             $category->description = app(HtmlSanitizer::class)->clean($category->description);
         });
+
+        // Silinen kategorinin alt kategorileri bir üst seviyeye taşınır; ağaçta yetim kalmazlar.
+        static::deleting(function (Category $category) {
+            static::query()->where('parent_id', $category->id)->update(['parent_id' => $category->parent_id]);
+        });
+    }
+
+    /** Bu kategori ve tüm alt kategorilerinin kimlikleri (filtrelerde kullanılır). */
+    public static function descendantIdsOf(int $id): array
+    {
+        $all = static::query()->pluck('parent_id', 'id');
+        $ids = [$id];
+        $queue = [$id];
+
+        while ($queue) {
+            $current = array_shift($queue);
+
+            foreach ($all as $childId => $parentId) {
+                if ((int) $parentId === $current && ! in_array($childId, $ids, true)) {
+                    $ids[] = $childId;
+                    $queue[] = $childId;
+                }
+            }
+        }
+
+        return $ids;
     }
 
     #[Scope]

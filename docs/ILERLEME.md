@@ -8,7 +8,7 @@ Son güncelleme: 2026-11-02
 |---|---|
 | 1 — Temel altyapı (Laravel 13.39, Filament 5.11, MySQL 8.4, giriş, roller) | ✅ Tamamlandı |
 | 2 — CMS (ana sayfa blokları, kurumsal sayfalar, menü, footer, site ayarları) | ✅ Panel tarafı tamamlandı |
-| 3 — Ürün kataloğu | ⏳ Veri modeli ve modeller hazır; panel ekranları yapılmadı |
+| 3 — Ürün kataloğu (ürün, kategori, marka, özellik, Excel/CSV, katalog sorgu servisi) | ✅ Tamamlandı |
 | 4 — Ön yüz (Blade + Tailwind 4 + Alpine) | ⏳ Başlanmadı (`/` hâlâ Laravel karşılama sayfası) |
 | 5 — SEO ve iletişim (form gönderimi, SMTP, sitemap, yönlendirme middleware'i) | ⏳ Panel ekranları hazır, ön yüz akışı yok |
 | 6 — Test ve cPanel yayını | ⏳ Başlanmadı |
@@ -29,9 +29,33 @@ Son güncelleme: 2026-11-02
 | Site Ayarları | Yalnızca yönetici | Genel, iletişim, sosyal medya, varsayılan SEO, Analytics/GTM/Search Console kimlikleri (yalnızca kimlik, script değil) |
 | Kullanıcılar ve Roller | Yalnızca yönetici | Yönetici/editör, pasifleştirme, kendini silme/rol düşürme engeli |
 
+## Aşama 3 — Katalog modülleri
+
+| Modül | Özellikler |
+|---|---|
+| Ürünler | Ad, benzersiz kod, slug, marka (formdan yeni marka eklenebilir), ana + ek kategoriler, kısa/detaylı açıklama, kullanım alanları, teknik özellik tablosu, renk/hacim/ambalaj, filtre özellikleri, sıralanabilir çoklu görsel (ALT ile), PDF dokümanlar, öne çıkan/aktif, zamanlı yayın, SEO, kopyalama, çöp kutusu |
+| Ürün listesi | Ad/kod/marka araması, marka / kategori (alt kategoriler dahil) / aktif / öne çıkan / görsel filtreleri, toplu aktif-pasif-öne çıkar |
+| Kategoriler | En fazla 3 seviye, döngü engeli, sürükle-bırak sıra, açıklama (SEO), görsel, menüde göster; silinen kategorinin alt kategorileri bir üste taşınır |
+| Markalar | Logo, kapak, açıklama, web sitesi, ana sayfada göster, ürün sayısı, SEO |
+| Ürün Özellikleri | Filtre özellikleri ve sıralanabilir değerleri (Renk → Beyaz, Gri …) |
+| Excel / CSV | İçe aktar (.xlsx ve .csv; `;` veya `,` ayraç otomatik), dışa aktar (.xlsx / .csv), açıklamalı boş şablon |
+
+**Aktarım kuralları:** eşleştirme `kod` ile yapılır; boş hücre mevcut değeri değiştirmez; hatalı satırlar raporlanır,
+diğerleri kaydedilir; en fazla 5.000 satır; kuyruk/cron gerektirmez. Görseller ve PDF'ler dosyayla değil panelden yüklenir
+(uzak adresten dosya indirmek güvenlik riski olduğu için bilerek eklenmedi).
+
+**`App\Services\Catalog\ProductCatalog`:** Aşama 4'teki kategori sayfası için hazır sorgu katmanı — alt/ek kategoriler,
+marka ve özellik filtreleri (aynı özellik içinde VEYA, özellikler arasında VE), arama, sıralama ve yalnızca sonuç
+döndüren filtre seçenekleri.
+
 ## Testler
 
-`php artisan test` → **56 test, 144 doğrulama, tamamı geçti** (SQLite bellek içi).
+`php artisan test` → **87 test, 256 doğrulama, tamamı geçti** (SQLite bellek içi). Katalog testleri ayrıca
+MySQL 8.4 test veritabanında da çalıştırıldı (13 test geçti).
+
+- `tests/Feature/Admin/CatalogAdminTest` — tüm katalog ekranları, ürün oluşturma/düzenleme ve ilişkiler, kod benzersizliği, arama, alt kategori filtresi, kategori döngü engeli, içe/dışa aktarma aksiyonları
+- `tests/Feature/Catalog/ProductImportExportTest` — CSV/XLSX aktarımı, boş hücre kuralı, satır hataları, eksik marka seçeneği, HTML temizliği, dışa aktar → geri içe aktar
+- `tests/Feature/Catalog/ProductCatalogTest` — kategori kapsamı, filtre birleşimleri, arama, bozuk filtre değerleri, filtre seçenekleri
 
 - `tests/Unit/HtmlSanitizerTest` — script, olay öznitelikleri, `javascript:` bağlantı, iframe temizliği
 - `tests/Unit/BlockRegistryTest` — bilinmeyen/pasif blokların atlanması
