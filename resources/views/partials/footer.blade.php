@@ -107,7 +107,7 @@
             <dl class="container-site flex flex-wrap gap-x-6 gap-y-1.5 py-4 text-xs text-navy-300">
                 @foreach ($legal as $label => $value)
                     <div class="flex gap-1.5">
-                        <dt class="text-navy-400">{{ $label }}:</dt>
+                        <dt class="text-navy-300">{{ $label }}:</dt>
                         <dd class="text-navy-200">{{ $value }}</dd>
                     </div>
                 @endforeach

@@ -42,6 +42,8 @@ class CatalogController extends Controller
             $seo->crumb($item->name, $item->is($category) ? null : route('categories.show', $item));
         }
 
+        // Açıklama girilmemiş kategoriler için anlamlı bir meta açıklama üret.
+        $seo->description ??= "{$category->name}: {$products->total()} ürün. Ürün kodu, ebat ve teknik bilgileri inceleyin, teklif isteyin.";
         $seo->noindex = $seo->noindex || $this->isFiltered($filters);
 
         return view('catalog.category', compact('category', 'products', 'facets', 'filters', 'seo'));

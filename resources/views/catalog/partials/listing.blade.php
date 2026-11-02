@@ -31,7 +31,7 @@
 
                 @if ($facets['children']->isNotEmpty())
                     <section class="border-b border-slate-200 pb-5">
-                        <h3 class="text-sm font-semibold">{{ isset($category) ? 'Alt kategoriler' : 'Kategoriler' }}</h3>
+                        <h2 class="text-sm font-semibold">{{ isset($category) ? 'Alt kategoriler' : 'Kategoriler' }}</h2>
                         <ul class="mt-3 space-y-1">
                             @foreach ($facets['children'] as $child)
                                 <li><a href="{{ route('categories.show', $child) }}" class="block rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-navy-50 hover:text-navy-950">{{ $child->name }}</a></li>
@@ -133,6 +133,7 @@
                     @endif
                 </div>
             @else
+                <h2 class="sr-only">Ürün listesi</h2>
                 <div class="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
                     @foreach ($products as $product)
                         <x-product-card :product="$product" :eager="$loop->index < 4" />

@@ -37,6 +37,8 @@ class CompanyInfoSeeder extends Seeder
             'company.trade_registry' => '110395',
             'company.website' => 'https://www.dysontedarik.com',
             'company.show_in_footer' => true,
+
+            'seo.default_description' => 'Dyson Tedarik; oto bakım sıvıları, bakım ve temizlik spreyleri, yapıştırma ve sızdırmazlık ürünleri ile Karbosan kesme, taşlama ve zımpara ürünlerinin kurumsal tedarikçisi.',
         ];
 
         foreach ($values as $key => $value) {
