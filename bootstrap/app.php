@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Middleware\CanonicalHost;
+use App\Http\Middleware\SecurityHeaders;
+use App\Http\Middleware\TrustProxies;
 use App\Services\RedirectResolver;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -14,7 +17,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->prepend(CanonicalHost::class);
+        $middleware->append(SecurityHeaders::class);
+
+        // Cloudflare veya hosting proxy'si arkasındaysa .env'de TRUSTED_PROXIES tanımlanır (ör. "*").
+        $middleware->replace(Illuminate\Http\Middleware\TrustProxies::class, TrustProxies::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Bulunamayan adres için panelde tanımlı 301/302 yönlendirme varsa uygula.

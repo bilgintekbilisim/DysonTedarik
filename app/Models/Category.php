@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Concerns\HasSeo;
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\OptimizesImages;
 use App\Models\Concerns\RedirectsOldSlug;
 use App\Services\HtmlSanitizer;
 use App\Support\PublicCache;
@@ -23,7 +24,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Category extends Model
 {
-    use HasFactory, HasSeo, HasSlug, RedirectsOldSlug, SoftDeletes;
+    use HasFactory, HasSeo, HasSlug, OptimizesImages, RedirectsOldSlug, SoftDeletes;
+
+    /** Kayıtta WebP'ye çevrilen görsel alanları => en uzun kenar (px). */
+    protected array $optimizedImages = ['image' => 1200, 'og_image' => 1200];
 
     protected function casts(): array
     {

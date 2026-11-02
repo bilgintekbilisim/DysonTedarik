@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\SlideGroup;
+use App\Models\Concerns\OptimizesImages;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,7 +16,10 @@ use Illuminate\Database\Eloquent\Model;
 ])]
 class Slide extends Model
 {
-    use HasFactory;
+    use HasFactory, OptimizesImages;
+
+    /** Kayıtta WebP'ye çevrilen görsel alanları => en uzun kenar (px). */
+    protected array $optimizedImages = ['image_desktop' => 1920, 'image_mobile' => 1000];
 
     protected function casts(): array
     {

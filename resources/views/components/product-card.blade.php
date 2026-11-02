@@ -6,6 +6,7 @@
             :path="$product->coverImage?->path"
             :alt="$product->coverImage?->alt ?: $product->name"
             :eager="$eager"
+            :thumb="true"
             width="400"
             height="400"
             sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 50vw"

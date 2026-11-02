@@ -6,6 +6,7 @@ use App\Enums\ContentStatus;
 use App\Enums\PageType;
 use App\Models\Concerns\HasSeo;
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\OptimizesImages;
 use App\Models\Concerns\RedirectsOldSlug;
 use App\Services\HtmlSanitizer;
 use App\Support\PublicCache;
@@ -24,7 +25,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Page extends Model
 {
-    use HasFactory, HasSeo, HasSlug, RedirectsOldSlug, SoftDeletes;
+    use HasFactory, HasSeo, HasSlug, OptimizesImages, RedirectsOldSlug, SoftDeletes;
+
+    /** Kayıtta WebP'ye çevrilen görsel alanları => en uzun kenar (px). */
+    protected array $optimizedImages = ['cover_image' => 1920, 'og_image' => 1200];
 
     protected string $slugSource = 'title';
 

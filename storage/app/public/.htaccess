@@ -1,0 +1,13 @@
+# Yüklenen dosyalar (public/storage) yalnızca indirilir, asla sunucuda çalıştırılmaz.
+Options -Indexes -ExecCGI
+
+<FilesMatch "\.(php\d?|phtml|phar|pht|shtml|cgi|pl|py|sh|htaccess)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+RemoveHandler .php .phtml .phar .php5 .php7 .php8
+RemoveType .php .phtml .phar .php5 .php7 .php8

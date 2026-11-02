@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // APP_URL https ise üretilen tüm bağlantılar https olsun (proxy arkasında http görünse bile).
+        if (str_starts_with((string) config('app.url'), 'https://')) {
+            URL::forceScheme('https');
+        }
+
         // Geliştirmede fillable dışı alan atamalarını sessizce yutmak yerine hata ver.
         Model::preventSilentlyDiscardingAttributes(! $this->app->isProduction());
 

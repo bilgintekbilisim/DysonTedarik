@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    # Gizli dosyalara (.env, .git vb.) erişimi engelle; /.well-known (SSL doğrulama) hariç.
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -22,4 +25,37 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+</IfModule>
+
+# Yedek, log ve yapılandırma dosyaları web'den indirilemesin.
+<FilesMatch "\.(env|log|sql|sqlite|bak|zip|tar|gz|ini|sh|lock|md|yml|yaml)$">
+    Require all denied
+</FilesMatch>
+
+# Metin tabanlı yanıtları sıkıştır.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml font/woff2
+</IfModule>
+
+# Tarayıcı önbelleği. /build altındaki dosyaların adında içerik özeti olduğu için uzun süre önbelleklenebilir.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 week"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <If "%{REQUEST_URI} =~ m#^/build/#">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </If>
+    Header always set X-Content-Type-Options "nosniff"
+    Header unset X-Powered-By
 </IfModule>
