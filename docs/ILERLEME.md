@@ -130,6 +130,13 @@ vergi dairesi/numarası, MERSİS ve ticaret sicil numarası, web sitesi.
 - MERSİS formda 15 hane (`733130534700001`) görünüyordu; Excel baştaki sıfırı sildiği için 16 haneli `0733130534700001` olarak kaydedildi.
 - WhatsApp numarası olarak yetkili GSM (+90 530 422 17 28) kullanıldı.
 
+## Kurumsal metinler (`CorporateContentSeeder`)
+
+Hakkımızda, Vizyonumuz, Misyonumuz ve Kalite Politikamız yazıldı ve yayına alındı; ana sayfadaki "Firma tanıtım alanı"
+Hakkımızda özetiyle dolduruldu. Metinler yalnızca bilinen bilgilere dayanır (ünvan, merkez, ürün grupları, hizmet verilen
+sektörler, çalışma şekli); kuruluş yılı, sertifika, sayısal başarı veya "lider" gibi iddialar içermez (testle denetlenir).
+Değerlerimiz, Neden Dyson Tedarik?, İletişim ve yasal metinler hâlâ taslak.
+
 ## Testler
 
 `php artisan test` → **115 test, 436 doğrulama, tamamı geçti** (SQLite bellek içi).
