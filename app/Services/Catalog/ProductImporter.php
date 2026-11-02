@@ -176,9 +176,11 @@ class ProductImporter
 
         try {
             DB::transaction(fn () => $this->saveRow($product, $code, $data));
+        } catch (InvalidArgumentException $e) {
+            $this->result->errors[$rowNumber] = "[{$code}] ".$e->getMessage();
         } catch (Throwable $e) {
             report($e);
-            $this->result->errors[$rowNumber] = "[{$code}] ".($e instanceof InvalidArgumentException ? $e->getMessage() : 'Kaydedilemedi: '.Str::limit($e->getMessage(), 150));
+            $this->result->errors[$rowNumber] = "[{$code}] Kaydedilemedi: ".Str::limit($e->getMessage(), 150);
         }
     }
 

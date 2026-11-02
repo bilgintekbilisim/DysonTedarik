@@ -33,6 +33,10 @@ class Category extends Model
 
     protected static function booted(): void
     {
+        // Menü bağlantıları ve mega menü bu kayıtların yayın durumuna bağlı.
+        static::saved(fn () => Menu::flushCache());
+        static::deleted(fn () => Menu::flushCache());
+
         static::saving(function (Category $category) {
             $category->description = app(HtmlSanitizer::class)->clean($category->description);
         });

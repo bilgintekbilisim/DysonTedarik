@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\MenuLocation;
+use App\Services\NavigationService;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -29,6 +30,8 @@ class Menu extends Model
         foreach (MenuLocation::cases() as $location) {
             Cache::forget("menu.{$location->value}");
         }
+
+        Cache::forget(NavigationService::CATEGORY_CACHE_KEY);
     }
 
     public function items(): HasMany

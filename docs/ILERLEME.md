@@ -9,7 +9,7 @@ Son güncelleme: 2026-11-02
 | 1 — Temel altyapı (Laravel 13.39, Filament 5.11, MySQL 8.4, giriş, roller) | ✅ Tamamlandı |
 | 2 — CMS (ana sayfa blokları, kurumsal sayfalar, menü, footer, site ayarları) | ✅ Panel tarafı tamamlandı |
 | 3 — Ürün kataloğu (ürün, kategori, marka, özellik, Excel/CSV, katalog sorgu servisi) | ✅ Tamamlandı |
-| 4 — Ön yüz (Blade + Tailwind 4 + Alpine) | ⏳ Başlanmadı (`/` hâlâ Laravel karşılama sayfası) |
+| 4 — Ön yüz (Blade + Tailwind 4 + Alpine) | ✅ Tamamlandı (teklif/iletişim formları Aşama 5'te) |
 | 5 — SEO ve iletişim (form gönderimi, SMTP, sitemap, yönlendirme middleware'i) | ⏳ Panel ekranları hazır, ön yüz akışı yok |
 | 6 — Test ve cPanel yayını | ⏳ Başlanmadı |
 
@@ -48,9 +48,37 @@ diğerleri kaydedilir; en fazla 5.000 satır; kuyruk/cron gerektirmez. Görselle
 marka ve özellik filtreleri (aynı özellik içinde VEYA, özellikler arasında VE), arama, sıralama ve yalnızca sonuç
 döndüren filtre seçenekleri.
 
+## Aşama 4 — Ön yüz
+
+| Adres | Sayfa |
+|---|---|
+| `/` | Ana sayfa — panelden yönetilen bloklar; `?onizleme=1` panel kullanıcısına taslağı gösterir |
+| `/urunler`, `/urunler?q=` | Tüm ürünler ve arama sonuçları (filtreli) |
+| `/kategori/{slug}` | Kategori: alt kategoriler, marka ve özellik filtreleri, sıralama, sayfalama, kategori açıklaması |
+| `/urun/{slug}` | Ürün detayı: galeri (tam ekran), kod, teknik tablo, kullanım alanları, PDF'ler, WhatsApp, benzer ürünler |
+| `/markalar`, `/marka/{slug}` | Marka listesi ve marka ürünleri |
+| `/iletisim` | Site Ayarları'ndaki iletişim bilgileri, (varsa) yayındaki İletişim sayfası metni, tıklayınca yüklenen harita |
+| `/{slug}` | Kurumsal ve yasal sayfalar (yalnızca yayındakiler; taslak panel kullanıcısına önizleme) |
+| `/arama/oneriler` | Arama kutusu önerileri (JSON, dakikada 60 istek sınırı) |
+
+- **Header:** iletişim şeridi, logo, öneri veren ürün araması, mega menü (Menü Yönetimi'nde "Mega menü" işaretli öğe), açılır alt menüler; mobilde çekmece menü ve iç içe kategori açılırları.
+- **Footer:** logo, açıklama, sosyal medya, kategori sütunu, kurumsal/hızlı/yasal menüler, iletişim, telif yazısı.
+- **SEO:** sayfa başına title/description, canonical, robots (filtreli/arama sayfaları ve önizleme `noindex`), Open Graph, Search Console/Bing doğrulama, JSON-LD (Organization, BreadcrumbList, Product — fiyat olmadığı için `offers` yok).
+- **KVKK / çerez:** Analytics ve Tag Manager yalnızca çerez onayı verilirse yüklenir; Google Haritalar tıklanmadan yüklenmez; font sunucudan servis edilir (Google Fonts çağrısı yok).
+- **Erişilebilirlik:** "İçeriğe geç" bağlantısı, klavye ile menü ve arama, ARIA etiketleri, `prefers-reduced-motion` desteği.
+- **Performans:** derlenmiş CSS 17 KB, JS 30 KB (gzip); ilk slayt görseli öncelikli, diğer görseller lazy; menü, kategori ağacı ve ayarlar önbellekte.
+- 375 px mobil genişlikte tüm sayfalarda yatay taşma olmadığı tarayıcıda doğrulandı.
+
+**Demo verisi (yalnızca yerel):** `php artisan db:seed --class=DemoCatalogSeeder` "Demo" etiketli kategori, marka, ürün ve slaytlar oluşturur; production'da çalışmayı reddeder.
+
+**Bilinen eksikler:** Görseller yüklendiği boyutta sunulur (otomatik küçültme/WebP dönüşümü yok — Aşama 6'da değerlendirilecek).
+Lighthouse ölçümü bu ortamda yapılmadı; yayın öncesi Aşama 6'da test sunucusunda ölçülecek.
+
 ## Testler
 
-`php artisan test` → **87 test, 256 doğrulama, tamamı geçti** (SQLite bellek içi). Katalog testleri ayrıca
+`php artisan test` → **100 test, 336 doğrulama, tamamı geçti** (SQLite bellek içi).
+
+- `tests/Feature/Frontend/FrontendPagesTest` — blok yayını/taslak önizleme, boş blokların atlanması, sayfa yayın durumu, menüde taslak bağlantının gizlenmesi, kategori filtreleri ve noindex/canonical, ürün detayı ve JSON-LD, pasif/zamanlı ürün 404, XSS kaçışı, marka sayfası, arama önerileri ve hız sınırı, SEO varsayılanları, iletişim, 404 sayfası Katalog testleri ayrıca
 MySQL 8.4 test veritabanında da çalıştırıldı (13 test geçti).
 
 - `tests/Feature/Admin/CatalogAdminTest` — tüm katalog ekranları, ürün oluşturma/düzenleme ve ilişkiler, kod benzersizliği, arama, alt kategori filtresi, kategori döngü engeli, içe/dışa aktarma aksiyonları

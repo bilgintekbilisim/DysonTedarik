@@ -31,6 +31,10 @@ class Brand extends Model
 
     protected static function booted(): void
     {
+        // Menü bağlantıları ve mega menü bu kayıtların yayın durumuna bağlı.
+        static::saved(fn () => Menu::flushCache());
+        static::deleted(fn () => Menu::flushCache());
+
         static::saving(function (Brand $brand) {
             $brand->description = app(HtmlSanitizer::class)->clean($brand->description);
         });
