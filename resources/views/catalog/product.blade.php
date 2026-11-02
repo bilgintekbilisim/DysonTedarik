@@ -72,7 +72,7 @@
             {{-- Ürün bilgisi --}}
             <div>
                 @if ($product->brand)
-                    <a href="{{ route('brands.show', $product->brand) }}" class="eyebrow hover:underline">{{ $product->brand->name }}</a>
+                    <a href="{{ route('brands.show', $product->brand) }}" class="eyebrow normal-case hover:underline">{{ $product->brand->name }}</a>
                 @endif
                 <h1 class="mt-2 text-2xl leading-tight sm:text-3xl lg:text-4xl">{{ $product->name }}</h1>
                 <p class="mt-3 inline-flex items-center gap-2 rounded-md bg-navy-50 px-2.5 py-1 font-mono text-sm text-navy-900">

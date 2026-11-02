@@ -17,7 +17,7 @@
                             <source media="(max-width: 767px)" srcset="{{ Storage::disk('public')->url($slide->image_mobile) }}">
                         @endif
                         <img src="{{ Storage::disk('public')->url($slide->image_desktop) }}" alt="{{ $slide->image_alt ?: '' }}"
-                             class="size-full object-cover" width="1920" height="700"
+                             class="size-full object-cover sm:object-right" width="1920" height="700"
                              @if ($i === 0 && $first) fetchpriority="high" loading="eager" @else loading="lazy" @endif>
                     </picture>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/50 to-navy-950/10 sm:bg-gradient-to-r sm:from-navy-950/85 sm:via-navy-950/45 sm:to-transparent"></div>

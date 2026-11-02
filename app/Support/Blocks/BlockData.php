@@ -55,9 +55,32 @@ class BlockData
             $categories = $query->whereIn('id', $ids)->get()->keyBy('id');
 
             // Yöneticinin seçtiği sırayı koru.
-            return collect($ids)->map(fn ($id) => $categories->get((int) $id))->filter()->take($limit)->values();
+            $categories = collect($ids)->map(fn ($id) => $categories->get((int) $id))->filter()->take($limit)->values();
+        } else {
+            $categories = $query->roots()->orderBy('sort_order')->limit($limit)->get();
         }
 
-        return $query->roots()->orderBy('sort_order')->limit($limit)->get();
+        return $categories->each(fn (Category $category) => $this->withFallbackImage($category));
+    }
+
+    /**
+     * Kategoriye görsel yüklenmemişse kartta, kategori ağacındaki ilk ürünün görseli gösterilir.
+     * Kalıcı değildir; yalnızca bu istekte "fallback_image" özniteliğine yazılır.
+     */
+    private function withFallbackImage(Category $category): void
+    {
+        if ($category->image) {
+            return;
+        }
+
+        $ids = Category::descendantIdsOf($category->id);
+
+        $category->setAttribute('fallback_image', Product::query()->active()
+            ->whereIn('category_id', $ids)
+            ->whereHas('images')
+            ->with('coverImage')
+            ->orderByDesc('is_featured')
+            ->orderBy('sort_order')
+            ->first()?->coverImage?->path);
     }
 }

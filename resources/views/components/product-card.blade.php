@@ -17,7 +17,8 @@
     </div>
     <div class="flex flex-1 flex-col gap-1.5 p-4">
         @if ($product->brand)
-            <p class="text-xs font-semibold tracking-wide text-accent-600 uppercase">{{ $product->brand->name }}</p>
+            {{-- Marka adı yazıldığı gibi gösterilir: lang="tr" ile büyük harfe çevirmek "i"yi "İ" yapar. --}}
+            <p class="text-xs font-semibold tracking-wide text-accent-600">{{ $product->brand->name }}</p>
         @endif
         <h3 class="line-clamp-2 text-sm leading-snug font-semibold text-navy-950 sm:text-base">
             <a href="{{ route('products.show', $product) }}" class="after:absolute after:inset-0 focus:outline-none">

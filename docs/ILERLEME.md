@@ -93,6 +93,30 @@ Lighthouse ölçümü bu ortamda yapılmadı; yayın öncesi Aşama 6'da test su
 **Yayın notu:** Müşteriye otomatik "talebiniz alındı" e-postası bilerek eklenmedi — form üzerinden başkalarının adresine
 e-posta gönderilmesine (spam aracı olarak kötüye kullanıma) yol açabilir. İstenirse yalnızca doğrulanmış alıcılarla eklenebilir.
 
+## Dyson Professional kataloğu (`DysonCatalogSeeder`)
+
+`php artisan db:seed --class=DysonCatalogSeeder` (ayrıca `DatabaseSeeder` içinde). Kaynak dosyalar `database/seeders/assets/dyson/`.
+
+| Ana kategori | Alt kategori | Ürünler |
+|---|---|---|
+| Oto Bakım Sıvıları | AdBlue | Premium AdBlue 5 L, 10 L, 20 L, 1000 L IBC |
+| | Antifriz | Antifriz -37 °C Mavi 3 L, Kırmızı 3 L, Antifriz 16 kg |
+| | Oto Cam Suyu | Antifrizli Oto Cam Suyu 1 L, 3 L, 5 L |
+| Bakım ve Temizlik Spreyleri | Yağlayıcı ve Pas Sökücü Spreyler | +40 Multi Sprey 200 ml, Pas Sökücü MoS2 400 ml, Sıvı Gres 400 ml |
+| | Temizleyici Spreyler | Motor Temizleyici 500 ml, Fren Balata Temizleyici 500 ml |
+| Yapıştırma ve Sızdırmazlık | Mum Silikon | Hot Melt Stick Ø7,4 × 300 mm (DYSN2594) |
+| | Sıvı Contalar | RTV Nötr Sıvı Conta Siyah 200 ml |
+| Endüstriyel Temizlik | El Temizleme Ürünleri | Çok Amaçlı El Temizleme Kremi 3 kg |
+
+- Ürün metinleri ve teknik özellikler **ambalaj etiketlerinden** aktarıldı. Etikette yer alan sertifika/test ifadeleri
+  (ISO, "dermatolojik olarak test edilmiştir", "Alman teknolojisi") belge ile doğrulanmadan siteye eklenmedi.
+- Ürün kodları: etikette kod olan tek ürün `DYSN2594`. Diğerlerine geçici iç kod verildi (`DP-…`); gerçek kodlar panelden veya Excel ile güncellenmeli.
+- Görseller şeffaf zeminli 1000×1000 WebP'ye çevrildi (ortalama ~60 KB). Dört sprey görselindeki opak beyaz zemin temizlendi.
+- 3 ana sayfa slaytı (masaüstü 1920×700, mobil 800×1000 WebP) ürün görsellerinden üretildi; başlık ve buton metinleri panelden değiştirilebilir.
+- Logo Site Ayarları'na (logo, koyu zemin logosu, favicon) ve markaya eklendi.
+- Tek marka olduğu için ana sayfadaki "Markalarımız" bloğu pasif yapıldı; ikinci marka eklenince panelden açılabilir.
+- Kategori görseli yüklenmemiş kategorilerin kartında, kategorideki öne çıkan ürünün görseli gösterilir.
+
 ## Testler
 
 `php artisan test` → **115 test, 436 doğrulama, tamamı geçti** (SQLite bellek içi).

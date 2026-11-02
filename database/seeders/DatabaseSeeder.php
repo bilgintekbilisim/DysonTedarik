@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             PageSeeder::class,
             MenuSeeder::class,
+            DysonCatalogSeeder::class,
         ]);
     }
 }
