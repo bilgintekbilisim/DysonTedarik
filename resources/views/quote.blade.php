@@ -25,7 +25,7 @@
                             </div>
                         @endif
                         <div class="grid gap-5 sm:grid-cols-2">
-                            <x-form.field name="product_name" label="Ürün adı" :required="true" :value="$product?->name" maxlength="255" class="sm:col-span-2" />
+                            <x-form.field name="product_name" label="Ürün adı" :required="true" :value="$productName" maxlength="255" class="sm:col-span-2" />
                             <x-form.field name="product_code" label="Ürün kodu" :value="$product?->code" maxlength="100" />
                             <x-form.field name="quantity" label="Talep miktarı" maxlength="100" placeholder="Ör. 20 koli, 500 adet" />
                         </div>

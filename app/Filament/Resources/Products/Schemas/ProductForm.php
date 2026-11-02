@@ -6,6 +6,7 @@ use App\Filament\Resources\Categories\Schemas\CategoryForm;
 use App\Filament\Support\Fields;
 use App\Models\AttributeValue;
 use App\Models\Category;
+use App\Support\VariantTable;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -126,6 +127,14 @@ class ProductForm
                 ->addActionLabel('Satır ekle')
                 ->defaultItems(0)
                 ->helperText('Ürün detayında tablo olarak gösterilir (ör. Kür süresi — 24 saat).'),
+            Textarea::make('variant_table')
+                ->label('Ebat / artikel tablosu')
+                ->rows(8)
+                ->extraInputAttributes(['class' => 'font-mono text-xs'])
+                ->formatStateUsing(fn ($state) => VariantTable::toText(is_array($state) ? $state : null))
+                ->dehydrateStateUsing(fn (?string $state) => VariantTable::fromText($state))
+                ->placeholder("Tip | Ebat | Artikel | Kutu Miktarı\nT41 | 115 x 1.0 x 22.23 | 910380 | 25")
+                ->helperText('Excel\'den satırları kopyalayıp yapıştırabilirsiniz. İlk satır başlıktır; sütunlar sekme veya "|" ile ayrılır. En fazla 500 satır. Artikel numaraları site aramasında bulunur.'),
             Select::make('attributeValues')
                 ->label('Filtre özellikleri')
                 ->relationship(

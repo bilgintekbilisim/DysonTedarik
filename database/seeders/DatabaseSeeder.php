@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             MenuSeeder::class,
             DysonCatalogSeeder::class,
+            KarbosanCatalogSeeder::class,
             CorporateContentSeeder::class,
         ]);
     }

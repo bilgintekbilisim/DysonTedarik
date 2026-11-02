@@ -137,6 +137,22 @@ Hakkımızda özetiyle dolduruldu. Metinler yalnızca bilinen bilgilere dayanır
 sektörler, çalışma şekli); kuruluş yılı, sertifika, sayısal başarı veya "lider" gibi iddialar içermez (testle denetlenir).
 Değerlerimiz, Neden Dyson Tedarik?, İletişim ve yasal metinler hâlâ taslak.
 
+## Karbosan kataloğu (`KarbosanCatalogSeeder`)
+
+`database/seeders/data/karbosan.json` — karbosan.com ürün gruplarından derlenen olgusal veri (2026-11-02).
+
+- Ana kategori **Karbosan** → 11 grup: Kesme Diskleri, Taşlama Diskleri, Taşlama Taşları, Testere Taşları,
+  Takım Bileme Taşları, Bant Zımparalar, Rulo Zımparalar, Flap Diskler, Fiber Diskler, Cırtlı Diskler, Vidalı Diskler.
+- **139 ürün serisi**, toplam **474 ebat/artikel satırı**; marka: Karbosan.
+- Ürünlere yeni **ebat / artikel tablosu** alanı eklendi (`variant_table`): ürün sayfasında "Ebatlar ve artikeller" sekmesi,
+  her satırda o ebatı teklif formuna dolduran bağlantı; artikel numaraları site aramasında bulunur. Panelde Excel'den yapıştırılabilir.
+- Yeni filtreler: Ürün Tipi (T41, T42, T27 …), Uygulama Alanı, Uygulama Metodu, Sektör.
+- Kaynak sitedeki bozuk karakter kodlaması (ör. "Ãelik") ve "ș" harfleri düzeltildi.
+- Açıklamalar üreticinin tanıtım metinleri kopyalanmadan, olgusal verilerden üretildi.
+- Bant ve rulo zımparalarda kaynak sitede ebat tablosu yok (ebatlar siparişe göre); bu ürünlerde teklif yönlendirmesi var.
+- **Görseller eklenmedi** — Karbosan görsellerinin kullanım izni teyit edilince eklenecek (kaynak adresleri veri dosyasında).
+- Ürün kodları geçicidir (`KRB-…`); Karbosan seri kodları varsa panelden veya Excel ile güncellenebilir.
+
 ## Testler
 
 `php artisan test` → **115 test, 436 doğrulama, tamamı geçti** (SQLite bellek içi).

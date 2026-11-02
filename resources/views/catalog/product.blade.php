@@ -139,6 +139,7 @@
     @php
         $tabs = array_filter([
             'aciklama' => $product->description ? 'Ürün açıklaması' : null,
+            'ebatlar' => ! empty($product->variant_table['rows']) ? 'Ebatlar ve artikeller ('.count($product->variant_table['rows']).')' : null,
             'teknik' => $specs->isNotEmpty() ? 'Teknik özellikler' : null,
             'kullanim' => $product->usage_areas ? 'Kullanım alanları' : null,
         ]);
@@ -158,6 +159,40 @@
                 <div class="pt-8">
                     @isset($tabs['aciklama'])
                         <div id="panel-aciklama" role="tabpanel" aria-labelledby="sekme-aciklama" x-show="tab === 'aciklama'" class="prose-site max-w-4xl">{!! $product->description !!}</div>
+                    @endisset
+                    @isset($tabs['ebatlar'])
+                        @php $table = $product->variant_table; @endphp
+                        <div id="panel-ebatlar" role="tabpanel" aria-labelledby="sekme-ebatlar" x-show="tab === 'ebatlar'" @if (array_key_first($tabs) !== 'ebatlar') x-cloak @endif>
+                            <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                                <table class="w-full min-w-[36rem] text-sm">
+                                    <caption class="sr-only">{{ $product->name }} ebat ve artikel listesi</caption>
+                                    <thead class="bg-navy-50 text-start">
+                                        <tr>
+                                            @foreach ($table['headers'] as $header)
+                                                <th scope="col" class="px-4 py-3 text-start font-semibold whitespace-nowrap text-navy-900">{{ $header }}</th>
+                                            @endforeach
+                                            @if ($quoteUrl)
+                                                <th scope="col" class="px-4 py-3"><span class="sr-only">Teklif</span></th>
+                                            @endif
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        @foreach ($table['rows'] as $i => $row)
+                                            <tr class="hover:bg-slate-50">
+                                                @foreach ($row as $cell)
+                                                    <td class="px-4 py-2.5 whitespace-nowrap text-slate-700">{{ $cell }}</td>
+                                                @endforeach
+                                                @if ($quoteUrl)
+                                                    <td class="px-4 py-2.5 text-end">
+                                                        <a href="{{ route('quote.create', ['urun' => $product->code, 'secenek' => $i]) }}" class="text-xs font-semibold whitespace-nowrap text-accent-600 hover:underline" rel="nofollow">Teklif iste</a>
+                                                    </td>
+                                                @endif
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     @endisset
                     @isset($tabs['teknik'])
                         <div id="panel-teknik" role="tabpanel" aria-labelledby="sekme-teknik" x-show="tab === 'teknik'" @if (array_key_first($tabs) !== 'teknik') x-cloak @endif class="max-w-3xl overflow-hidden rounded-xl border border-slate-200 bg-white">

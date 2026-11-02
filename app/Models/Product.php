@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[Fillable([
     'brand_id', 'category_id', 'name', 'code', 'slug', 'short_description', 'description', 'usage_areas',
-    'technical_specs', 'color', 'volume', 'packaging', 'is_featured', 'is_active', 'published_at', 'sort_order',
+    'technical_specs', 'variant_table', 'color', 'volume', 'packaging', 'is_featured', 'is_active', 'published_at', 'sort_order',
     'meta_title', 'meta_description', 'og_image', 'canonical_url', 'noindex',
 ])]
 class Product extends Model
@@ -35,6 +35,7 @@ class Product extends Model
     {
         return [
             'technical_specs' => 'array',
+            'variant_table' => 'array',
             'is_featured' => 'boolean',
             'is_active' => 'boolean',
             'published_at' => 'datetime',
@@ -61,7 +62,7 @@ class Product extends Model
             ->where(fn (Builder $q) => $q->whereNull('published_at')->orWhere('published_at', '<=', now()));
     }
 
-    /** Ürün adı, kodu veya marka adına göre arama. */
+    /** Ürün adı, kodu, marka adı veya ölçü tablosundaki artikel / ebat bilgisine göre arama. */
     #[Scope]
     protected function search(Builder $query, ?string $term): void
     {
@@ -76,6 +77,7 @@ class Product extends Model
         $query->where(fn (Builder $q) => $q
             ->where('name', 'like', $like)
             ->orWhere('code', 'like', $like)
+            ->orWhere('variant_table', 'like', $like)
             ->orWhereHas('brand', fn (Builder $b) => $b->where('name', 'like', $like)));
     }
 
