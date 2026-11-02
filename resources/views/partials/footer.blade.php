@@ -62,28 +62,34 @@
             <div class="lg:col-span-3">
                 <h2 class="text-sm font-semibold !text-white">İletişim</h2>
                 <ul class="mt-4 space-y-3">
-                    @if ($contact['address'] ?? null)
+                    @if ($address = \App\Support\Company::address())
                         <li class="flex gap-3">
                             <x-heroicon-o-map-pin class="mt-0.5 size-5 shrink-0 text-accent-400" aria-hidden="true" />
                             @if ($contact['maps_url'] ?? null)
-                                <a href="{{ $contact['maps_url'] }}" target="_blank" rel="noopener" class="hover:text-white">{{ $contact['address'] }}</a>
+                                <a href="{{ $contact['maps_url'] }}" target="_blank" rel="noopener" class="hover:text-white">{{ $address }}</a>
                             @else
-                                <span>{{ $contact['address'] }}</span>
+                                <address class="not-italic">{{ $address }}</address>
                             @endif
                         </li>
                     @endif
-                    @if ($contact['phone'] ?? null)
+                    @foreach (\App\Support\Company::phones() as $phone)
                         <li class="flex gap-3">
                             <x-heroicon-o-phone class="size-5 shrink-0 text-accent-400" aria-hidden="true" />
-                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $contact['phone']) }}" class="hover:text-white">{{ $contact['phone'] }}</a>
+                            <span>
+                                @if ($phone['label'])<span class="text-navy-300">{{ $phone['label'] }}:</span>@endif
+                                <a href="{{ $phone['href'] }}" class="hover:text-white">{{ $phone['number'] }}</a>
+                            </span>
                         </li>
-                    @endif
-                    @if ($contact['email'] ?? null)
+                    @endforeach
+                    @foreach (\App\Support\Company::emails() as $email)
                         <li class="flex gap-3">
                             <x-heroicon-o-envelope class="size-5 shrink-0 text-accent-400" aria-hidden="true" />
-                            <a href="mailto:{{ $contact['email'] }}" class="break-all hover:text-white">{{ $contact['email'] }}</a>
+                            <span class="min-w-0">
+                                @if ($email['label'])<span class="block text-navy-300">{{ $email['label'] }}</span>@endif
+                                <a href="mailto:{{ $email['address'] }}" class="break-words hover:text-white">{{ $email['address'] }}</a>
+                            </span>
                         </li>
-                    @endif
+                    @endforeach
                     @if ($whatsappUrl)
                         <li class="flex gap-3">
                             <span class="text-[#25d366]">{!! \App\Support\BrandIcons::svg('whatsapp', 'size-5') !!}</span>
@@ -94,6 +100,20 @@
             </div>
         @endif
     </div>
+
+    @php $legal = ($site->get('company.show_in_footer', true)) ? \App\Support\Company::legalLines() : []; @endphp
+    @if ($legal)
+        <div class="border-t border-white/10">
+            <dl class="container-site flex flex-wrap gap-x-6 gap-y-1.5 py-4 text-xs text-navy-300">
+                @foreach ($legal as $label => $value)
+                    <div class="flex gap-1.5">
+                        <dt class="text-navy-400">{{ $label }}:</dt>
+                        <dd class="text-navy-200">{{ $value }}</dd>
+                    </div>
+                @endforeach
+            </dl>
+        </div>
+    @endif
 
     <div class="border-t border-white/10">
         <div class="container-site flex flex-col gap-3 py-5 text-xs text-navy-300 sm:flex-row sm:items-center sm:justify-between">

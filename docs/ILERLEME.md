@@ -117,6 +117,19 @@ e-posta gönderilmesine (spam aracı olarak kötüye kullanıma) yol açabilir. 
 - Tek marka olduğu için ana sayfadaki "Markalarımız" bloğu pasif yapıldı; ikinci marka eklenince panelden açılabilir.
 - Kategori görseli yüklenmemiş kategorilerin kartında, kategorideki öne çıkan ürünün görseli gösterilir.
 
+## Cari bilgiler (`CompanyInfoSeeder`)
+
+Firma cari bilgi formundaki bilgiler Site Ayarları'na işlendi (yalnızca boş alanlar doldurulur):
+ünvan, yetkili ve muhasebe telefonları, info@ ve muhasebe@ e-postaları, merkez adres (ilçe, il, posta kodu),
+vergi dairesi/numarası, MERSİS ve ticaret sicil numarası, web sitesi.
+
+- Site Ayarları'na **Firma bilgileri** sekmesi ve telefon/e-posta etiket alanları eklendi.
+- Footer: adres, etiketli telefon ve e-postalar, WhatsApp ve alt şeritte yasal bilgiler (panelden gizlenebilir).
+- İletişim sayfası: tüm iletişim kanalları ve "Firma bilgileri" kutusu.
+- Ana sayfa Organization JSON-LD: `legalName`, `taxID`, `PostalAddress`, `contactPoint`.
+- MERSİS formda 15 hane (`733130534700001`) görünüyordu; Excel baştaki sıfırı sildiği için 16 haneli `0733130534700001` olarak kaydedildi.
+- WhatsApp numarası olarak yetkili GSM (+90 530 422 17 28) kullanıldı.
+
 ## Testler
 
 `php artisan test` → **115 test, 436 doğrulama, tamamı geçti** (SQLite bellek içi).

@@ -2,7 +2,8 @@
 
 @php
     $contact = $site->group('contact');
-    $phoneHref = fn ($phone) => 'tel:'.preg_replace('/[^0-9+]/', '', $phone);
+    $address = \App\Support\Company::address();
+    $legal = \App\Support\Company::legalLines();
 @endphp
 
 @section('content')
@@ -11,30 +12,30 @@
     <section class="container-site py-10 lg:py-14">
         <div class="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
             <div class="space-y-4">
-                @if ($contact['address'] ?? null)
+                @if ($address)
                     <div class="flex gap-4 rounded-xl border border-slate-200 p-5">
                         <x-heroicon-o-map-pin class="size-6 shrink-0 text-accent-600" aria-hidden="true" />
                         <div>
-                            <h2 class="text-sm font-semibold">Adres</h2>
-                            <address class="mt-1 text-sm not-italic text-slate-700">{{ $contact['address'] }}</address>
+                            <h2 class="text-sm font-semibold">Merkez adres</h2>
+                            <address class="mt-1 text-sm not-italic text-slate-700">{{ $address }}</address>
                             @if ($contact['maps_url'] ?? null)
                                 <a href="{{ $contact['maps_url'] }}" target="_blank" rel="noopener" class="mt-2 inline-block text-sm font-medium text-accent-600 hover:underline">Yol tarifi al →</a>
                             @endif
                         </div>
                     </div>
                 @endif
-                @foreach (array_filter([$contact['phone'] ?? null, $contact['phone_secondary'] ?? null]) as $phone)
-                    <a href="{{ $phoneHref($phone) }}" class="flex gap-4 rounded-xl border border-slate-200 p-5 hover:border-navy-200">
+                @foreach (\App\Support\Company::phones() as $phone)
+                    <a href="{{ $phone['href'] }}" class="flex gap-4 rounded-xl border border-slate-200 p-5 hover:border-navy-200">
                         <x-heroicon-o-phone class="size-6 shrink-0 text-accent-600" aria-hidden="true" />
-                        <span><span class="block text-sm font-semibold text-navy-950">Telefon</span><span class="text-sm text-slate-700">{{ $phone }}</span></span>
+                        <span><span class="block text-sm font-semibold text-navy-950">Telefon{{ $phone['label'] ? ' — '.$phone['label'] : '' }}</span><span class="text-sm text-slate-700">{{ $phone['number'] }}</span></span>
                     </a>
                 @endforeach
-                @if ($contact['email'] ?? null)
-                    <a href="mailto:{{ $contact['email'] }}" class="flex gap-4 rounded-xl border border-slate-200 p-5 hover:border-navy-200">
+                @foreach (\App\Support\Company::emails() as $email)
+                    <a href="mailto:{{ $email['address'] }}" class="flex gap-4 rounded-xl border border-slate-200 p-5 hover:border-navy-200">
                         <x-heroicon-o-envelope class="size-6 shrink-0 text-accent-600" aria-hidden="true" />
-                        <span><span class="block text-sm font-semibold text-navy-950">E-posta</span><span class="text-sm break-all text-slate-700">{{ $contact['email'] }}</span></span>
+                        <span class="min-w-0"><span class="block text-sm font-semibold text-navy-950">E-posta{{ $email['label'] ? ' — '.$email['label'] : '' }}</span><span class="text-sm break-all text-slate-700">{{ $email['address'] }}</span></span>
                     </a>
-                @endif
+                @endforeach
                 @if ($whatsappUrl)
                     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" class="flex gap-4 rounded-xl border border-slate-200 p-5 hover:border-navy-200">
                         <span class="text-[#25d366]">{!! \App\Support\BrandIcons::svg('whatsapp', 'size-6') !!}</span>
@@ -45,6 +46,21 @@
                     <div class="flex gap-4 rounded-xl border border-slate-200 p-5">
                         <x-heroicon-o-clock class="size-6 shrink-0 text-accent-600" aria-hidden="true" />
                         <span><span class="block text-sm font-semibold text-navy-950">Çalışma saatleri</span><span class="text-sm text-slate-700">{{ $contact['working_hours'] }}</span></span>
+                    </div>
+                @endif
+                @if ($legal)
+                    <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                        <h2 class="flex items-center gap-2 text-sm font-semibold">
+                            <x-heroicon-o-identification class="size-5 text-accent-600" aria-hidden="true" /> Firma bilgileri
+                        </h2>
+                        <dl class="mt-3 space-y-1.5 text-sm">
+                            @foreach ($legal as $label => $value)
+                                <div class="grid grid-cols-[8.5rem_1fr] gap-2">
+                                    <dt class="text-slate-500">{{ $label }}</dt>
+                                    <dd class="font-medium break-words text-navy-950">{{ $value }}</dd>
+                                </div>
+                            @endforeach
+                        </dl>
                     </div>
                 @endif
                 @if (! array_filter($contact))

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminUserSeeder::class,
             SettingsSeeder::class,
+            CompanyInfoSeeder::class,
             PageSeeder::class,
             MenuSeeder::class,
             DysonCatalogSeeder::class,

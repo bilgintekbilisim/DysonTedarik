@@ -6,6 +6,7 @@ use App\Models\Page;
 use App\Services\SettingsService;
 use App\Support\Blocks\BlockData;
 use App\Support\Blocks\BlockRegistry;
+use App\Support\Company;
 use App\Support\Seo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -38,8 +39,8 @@ class HomeController extends Controller
             'logo' => $settings->get('general.logo') ? url(asset('storage/'.$settings->get('general.logo'))) : null,
             'telephone' => $settings->get('contact.phone'),
             'email' => $settings->get('contact.email'),
-            'address' => $settings->get('contact.address'),
             'sameAs' => array_values(array_filter($settings->group('social'))) ?: null,
+            ...Company::schema(),
         ]));
 
         return view('home', compact('blocks', 'seo', 'preview'));

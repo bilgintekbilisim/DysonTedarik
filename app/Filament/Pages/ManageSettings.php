@@ -8,10 +8,12 @@ use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
+use Filament\Schemas\Components\Text;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
@@ -38,7 +40,7 @@ class ManageSettings extends SettingsPage
 
     protected function groups(): array
     {
-        return ['general', 'contact', 'social', 'seo', 'integrations'];
+        return ['general', 'contact', 'company', 'social', 'seo', 'integrations'];
     }
 
     /** SMTP bilgileri .env'de tutulur; burada yalnızca çalışıp çalışmadığı denenir. */
@@ -104,9 +106,14 @@ class ManageSettings extends SettingsPage
                         ->icon('heroicon-o-phone')
                         ->schema([
                             Grid::make(2)->schema([
-                                TextInput::make('contact.phone')->label('Telefon')->tel()->maxLength(30),
+                                TextInput::make('contact.phone')->label('Telefon')->tel()->maxLength(30)
+                                    ->helperText('Header, footer ve "Ara" butonlarında kullanılır.'),
+                                TextInput::make('contact.phone_label')->label('Telefon etiketi')->maxLength(40)->placeholder('Satış / Yetkili'),
                                 TextInput::make('contact.phone_secondary')->label('İkinci telefon')->tel()->maxLength(30),
+                                TextInput::make('contact.phone_secondary_label')->label('İkinci telefon etiketi')->maxLength(40)->placeholder('Muhasebe'),
                                 TextInput::make('contact.email')->label('E-posta')->email()->maxLength(150),
+                                TextInput::make('contact.email_secondary')->label('İkinci e-posta')->email()->maxLength(150),
+                                TextInput::make('contact.email_secondary_label')->label('İkinci e-posta etiketi')->maxLength(40)->placeholder('Muhasebe'),
                                 TextInput::make('contact.whatsapp')
                                     ->label('WhatsApp numarası')
                                     ->tel()
@@ -118,7 +125,12 @@ class ManageSettings extends SettingsPage
                                     ->helperText('Boşsa iletişim e-postasına gönderilir.'),
                                 TextInput::make('contact.working_hours')->label('Çalışma saatleri')->maxLength(100),
                             ]),
-                            Textarea::make('contact.address')->label('Adres')->rows(2)->maxLength(400),
+                            Textarea::make('contact.address')->label('Adres (mahalle, sokak, no)')->rows(2)->maxLength(400),
+                            Grid::make(3)->schema([
+                                TextInput::make('contact.district')->label('İlçe')->maxLength(60),
+                                TextInput::make('contact.city')->label('İl')->maxLength(60),
+                                TextInput::make('contact.postal_code')->label('Posta kodu')->regex('/^[0-9]{5}$/')->maxLength(5),
+                            ]),
                             TextInput::make('contact.maps_url')
                                 ->label('Google Maps bağlantısı')
                                 ->url()
@@ -134,6 +146,20 @@ class ManageSettings extends SettingsPage
                                 ->label('Üst bar notu')
                                 ->maxLength(120)
                                 ->helperText('Header\'daki iletişim şeridinde görünen kısa metin.'),
+                        ]),
+                    Tab::make('Firma bilgileri')
+                        ->icon('heroicon-o-identification')
+                        ->schema([
+                            Text::make('Ticari iletişim kuralları gereği footer ve iletişim sayfasında gösterilir. Boş bırakılan alan gösterilmez.'),
+                            Grid::make(2)->schema([
+                                TextInput::make('company.tax_office')->label('Vergi dairesi')->maxLength(80),
+                                TextInput::make('company.tax_number')->label('Vergi numarası')->regex('/^[0-9 ]{10,13}$/')->maxLength(13),
+                                TextInput::make('company.mersis')->label('MERSİS no')->regex('/^[0-9]{16}$/')
+                                    ->validationMessages(['regex' => 'MERSİS numarası 16 haneli olmalıdır.']),
+                                TextInput::make('company.trade_registry')->label('Ticaret sicil no')->maxLength(30),
+                                TextInput::make('company.website')->label('Web sitesi')->url()->maxLength(150),
+                            ]),
+                            Toggle::make('company.show_in_footer')->label('Yasal bilgileri footer\'da göster')->default(true),
                         ]),
                     Tab::make('Sosyal medya')
                         ->icon('heroicon-o-share')
