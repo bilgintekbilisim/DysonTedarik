@@ -4,7 +4,9 @@ namespace App\Models;
 
 use App\Models\Concerns\HasSeo;
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\RedirectsOldSlug;
 use App\Services\HtmlSanitizer;
+use App\Support\PublicCache;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
@@ -23,7 +25,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Product extends Model
 {
-    use HasFactory, HasSeo, HasSlug, SoftDeletes;
+    use HasFactory, HasSeo, HasSlug, RedirectsOldSlug, SoftDeletes;
 
     protected function casts(): array
     {
@@ -37,6 +39,9 @@ class Product extends Model
 
     protected static function booted(): void
     {
+        static::saved(fn () => PublicCache::flush());
+        static::deleted(fn () => PublicCache::flush());
+
         static::saving(function (Product $product) {
             $sanitizer = app(HtmlSanitizer::class);
             $product->description = $sanitizer->clean($product->description);
@@ -108,5 +113,11 @@ class Product extends Model
     public function quoteRequests(): HasMany
     {
         return $this->hasMany(QuoteRequest::class);
+    }
+
+    /** Slug değişince otomatik 301 için ön yüz rotası. */
+    public function publicRouteName(): ?string
+    {
+        return 'products.show';
     }
 }

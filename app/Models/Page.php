@@ -6,7 +6,9 @@ use App\Enums\ContentStatus;
 use App\Enums\PageType;
 use App\Models\Concerns\HasSeo;
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\RedirectsOldSlug;
 use App\Services\HtmlSanitizer;
+use App\Support\PublicCache;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
@@ -22,7 +24,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Page extends Model
 {
-    use HasFactory, HasSeo, HasSlug, SoftDeletes;
+    use HasFactory, HasSeo, HasSlug, RedirectsOldSlug, SoftDeletes;
 
     protected string $slugSource = 'title';
 
@@ -40,9 +42,9 @@ class Page extends Model
 
     protected static function booted(): void
     {
-        // Menü bağlantıları ve mega menü bu kayıtların yayın durumuna bağlı.
-        static::saved(fn () => Menu::flushCache());
-        static::deleted(fn () => Menu::flushCache());
+        // Menüler, mega menü ve sitemap bu kayıtların yayın durumuna bağlı.
+        static::saved(fn () => PublicCache::flush());
+        static::deleted(fn () => PublicCache::flush());
 
         static::saving(function (Page $page) {
             $sanitizer = app(HtmlSanitizer::class);
@@ -98,5 +100,11 @@ class Page extends Model
     public function editor(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
+    }
+
+    /** Slug değişince otomatik 301 için ön yüz rotası. */
+    public function publicRouteName(): ?string
+    {
+        return $this->type === PageType::Home ? null : 'pages.show';
     }
 }

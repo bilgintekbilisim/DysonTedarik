@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\RedirectResolver;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,9 @@ class Redirect extends Model
         static::saving(function (Redirect $redirect) {
             $redirect->from_path = static::normalizePath($redirect->from_path);
         });
+
+        static::saved(fn () => RedirectResolver::flush());
+        static::deleted(fn () => RedirectResolver::flush());
     }
 
     /** "https://site.com/Eski-Sayfa/?a=1" → "/eski-sayfa" */

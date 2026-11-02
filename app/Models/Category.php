@@ -4,7 +4,9 @@ namespace App\Models;
 
 use App\Models\Concerns\HasSeo;
 use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\RedirectsOldSlug;
 use App\Services\HtmlSanitizer;
+use App\Support\PublicCache;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
@@ -21,7 +23,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Category extends Model
 {
-    use HasFactory, HasSeo, HasSlug, SoftDeletes;
+    use HasFactory, HasSeo, HasSlug, RedirectsOldSlug, SoftDeletes;
 
     protected function casts(): array
     {
@@ -33,9 +35,9 @@ class Category extends Model
 
     protected static function booted(): void
     {
-        // Menü bağlantıları ve mega menü bu kayıtların yayın durumuna bağlı.
-        static::saved(fn () => Menu::flushCache());
-        static::deleted(fn () => Menu::flushCache());
+        // Menüler, mega menü ve sitemap bu kayıtların yayın durumuna bağlı.
+        static::saved(fn () => PublicCache::flush());
+        static::deleted(fn () => PublicCache::flush());
 
         static::saving(function (Category $category) {
             $category->description = app(HtmlSanitizer::class)->clean($category->description);
@@ -121,5 +123,11 @@ class Category extends Model
     public function fullName(): string
     {
         return collect($this->ancestorsAndSelf())->pluck('name')->implode(' › ');
+    }
+
+    /** Slug değişince otomatik 301 için ön yüz rotası. */
+    public function publicRouteName(): ?string
+    {
+        return 'categories.show';
     }
 }

@@ -5,12 +5,16 @@ namespace App\Filament\Pages;
 use App\Filament\Support\Fields;
 use App\Filament\Support\SettingsPage;
 use BackedEnum;
+use Filament\Actions\Action;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Support\Icons\Heroicon;
+use Illuminate\Support\Facades\Mail;
+use Throwable;
 use UnitEnum;
 
 class ManageSettings extends SettingsPage
@@ -35,6 +39,40 @@ class ManageSettings extends SettingsPage
     protected function groups(): array
     {
         return ['general', 'contact', 'social', 'seo', 'integrations'];
+    }
+
+    /** SMTP bilgileri .env'de tutulur; burada yalnızca çalışıp çalışmadığı denenir. */
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('testMail')
+                ->label('Test e-postası gönder')
+                ->icon('heroicon-o-envelope')
+                ->color('gray')
+                ->requiresConfirmation()
+                ->modalDescription(fn () => 'Sunucudaki SMTP ayarlarıyla '.auth()->user()->email.' adresine test e-postası gönderilecek.')
+                ->action(function () {
+                    try {
+                        Mail::raw(
+                            'Bu e-posta, Dyson Tedarik yönetim panelindeki SMTP testi ile gönderildi. Bu iletiyi aldıysanız teklif ve iletişim bildirimleri de ulaşacaktır.',
+                            fn ($message) => $message->to(auth()->user()->email)->subject('SMTP test e-postası'),
+                        );
+                    } catch (Throwable $e) {
+                        Notification::make()->danger()->title('E-posta gönderilemedi')
+                            ->body('Sunucudaki MAIL_* ayarlarını kontrol edin. Hata: '.str($e->getMessage())->limit(200))
+                            ->persistent()->send();
+
+                        return;
+                    }
+
+                    $mailer = config('mail.default');
+                    Notification::make()->success()->title('Test e-postası gönderildi')
+                        ->body(in_array($mailer, ['log', 'array'], true)
+                            ? "Not: Gönderim yöntemi \"{$mailer}\"; e-posta gerçekte gönderilmedi, yalnızca kaydedildi."
+                            : 'Gelen kutunuzu (ve istenmeyen klasörünü) kontrol edin.')
+                        ->send();
+                }),
+        ];
     }
 
     protected function fields(): array

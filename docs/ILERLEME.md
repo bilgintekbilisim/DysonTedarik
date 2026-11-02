@@ -10,7 +10,7 @@ Son güncelleme: 2026-11-02
 | 2 — CMS (ana sayfa blokları, kurumsal sayfalar, menü, footer, site ayarları) | ✅ Panel tarafı tamamlandı |
 | 3 — Ürün kataloğu (ürün, kategori, marka, özellik, Excel/CSV, katalog sorgu servisi) | ✅ Tamamlandı |
 | 4 — Ön yüz (Blade + Tailwind 4 + Alpine) | ✅ Tamamlandı (teklif/iletişim formları Aşama 5'te) |
-| 5 — SEO ve iletişim (form gönderimi, SMTP, sitemap, yönlendirme middleware'i) | ⏳ Panel ekranları hazır, ön yüz akışı yok |
+| 5 — SEO ve iletişim (teklif/iletişim formları, SMTP bildirimi, sitemap, robots, 301) | ✅ Tamamlandı |
 | 6 — Test ve cPanel yayını | ⏳ Başlanmadı |
 
 ## Tamamlanan admin modülleri (`/admin`)
@@ -74,9 +74,31 @@ döndüren filtre seçenekleri.
 **Bilinen eksikler:** Görseller yüklendiği boyutta sunulur (otomatik küçültme/WebP dönüşümü yok — Aşama 6'da değerlendirilecek).
 Lighthouse ölçümü bu ortamda yapılmadı; yayın öncesi Aşama 6'da test sunucusunda ölçülecek.
 
+## Aşama 5 — Formlar ve teknik SEO
+
+| Özellik | Ayrıntı |
+|---|---|
+| Teklif formu `/teklif-iste` | Ürün adı/kodu (`?urun=KOD` ile ürün sayfasından ön dolu), miktar, firma, ad soyad, telefon, e-posta, açıklama, KVKK onayı |
+| İletişim formu `/iletisim` | Ad soyad, e-posta, telefon, konu, mesaj, KVKK onayı |
+| Doğrulama | Form Request (sunucu tarafı), Türkçe hata mesajları, erişilebilir hata gösterimi |
+| Spam koruması | Gizli honeypot alanı + şifreli zaman damgası (3 sn'den hızlı / 2 saatten eski gönderim reddedilir); botlara hata gösterilmez, kayıt sessizce atılır. Captcha yok. |
+| Hız sınırı | IP başına dakikada 5, günde 30 form gönderimi |
+| Kayıt | Veritabanına "Yeni" durumunda; KVKK onay zamanı, IP ve tarayıcı bilgisiyle; ürün kodu eşleşirse ürüne bağlanır |
+| E-posta bildirimi | Teklifler "Teklif bildirim e-postası"na (yoksa iletişim e-postasına), mesajlar iletişim e-postasına; yanıtla → doğrudan talep sahibine. Yanıt döndükten sonra gönderilir; SMTP hatası kaydı kaybettirmez, log'a yazılır. Ziyaretçi metni e-postada HTML/Markdown olarak yorumlanmaz. |
+| SMTP testi | Site Ayarları → "Test e-postası gönder" (SMTP bilgileri yalnızca `.env`'de) |
+| `sitemap.xml` | Yayındaki sayfa, kategori, marka, ürün (+ ürün görseli); noindex ve başka adrese canonical verilmiş kayıtlar hariç; içerik kaydedilince otomatik yenilenir |
+| `robots.txt` | Production: `/admin`, `/livewire`, `/arama/` kapalı + sitemap adresi. Diğer ortamlar: tamamen kapalı (test sunucusu dizine girmez) |
+| 301/302 | Yalnızca 404 olan adreslerde uygulanır (canlı sayfayı gölgelemez), kullanım sayacı tutulur. Sayfa/kategori/marka/ürün slug'ı değişince eski adresten otomatik 301 oluşturulur; geri alma döngü yaratmaz, zincirler düzleştirilir. |
+
+**Yayın notu:** Müşteriye otomatik "talebiniz alındı" e-postası bilerek eklenmedi — form üzerinden başkalarının adresine
+e-posta gönderilmesine (spam aracı olarak kötüye kullanıma) yol açabilir. İstenirse yalnızca doğrulanmış alıcılarla eklenebilir.
+
 ## Testler
 
-`php artisan test` → **100 test, 336 doğrulama, tamamı geçti** (SQLite bellek içi).
+`php artisan test` → **115 test, 436 doğrulama, tamamı geçti** (SQLite bellek içi).
+
+- `tests/Feature/Frontend/InquiryFormsTest` — ön doldurma, kayıt + ürün bağlantısı + bildirim alıcısı/yanıt adresi, Türkçe doğrulama, honeypot ve zaman tuzağı, hız sınırı, iletişim formu, e-postada HTML/Markdown kaçışı, SMTP hatasında kaydın korunması
+- `tests/Feature/Frontend/SeoInfrastructureTest` — sitemap içeriği ve otomatik yenilenme, robots.txt ortam ayrımı, yönlendirme kuralları ve sayaç, slug değişiminde otomatik 301 ve döngü koruması, SMTP test aksiyonu
 
 - `tests/Feature/Frontend/FrontendPagesTest` — blok yayını/taslak önizleme, boş blokların atlanması, sayfa yayın durumu, menüde taslak bağlantının gizlenmesi, kategori filtreleri ve noindex/canonical, ürün detayı ve JSON-LD, pasif/zamanlı ürün 404, XSS kaçışı, marka sayfası, arama önerileri ve hız sınırı, SEO varsayılanları, iletişim, 404 sayfası Katalog testleri ayrıca
 MySQL 8.4 test veritabanında da çalıştırıldı (13 test geçti).
