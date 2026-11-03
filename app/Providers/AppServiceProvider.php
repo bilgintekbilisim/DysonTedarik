@@ -25,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(SettingsService::class);
         $this->app->singleton(HtmlSanitizer::class);
+
+        // Web klasörü proje dışındaysa (cPanel: document root = public_html, symlink kapalı)
+        // derlenmiş dosyalar, Filament dosyaları ve yüklemeler o klasörde aranır/yazılır.
+        if ($publicPath = config('app.public_path')) {
+            $this->app->usePublicPath($publicPath);
+        }
     }
 
     /**

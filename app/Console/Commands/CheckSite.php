@@ -53,6 +53,14 @@ class CheckSite extends Command
             ? (is_link(public_path('storage')) ? 'public/storage → bağlantı' : 'public/storage gerçek klasör')
             : 'php artisan storage:link (veya PUBLIC_DISK_ROOT)');
         $this->check('Yükleme klasörü yazılabilir', is_writable($uploads), $uploads);
+
+        $webRoot = realpath(public_path()) ?: public_path();
+        $this->check('Yüklemeler web klasöründe', str_starts_with(realpath($uploads) ?: $uploads, $webRoot), "web klasörü: {$webRoot}");
+        if (config('app.public_path')) {
+            $index = public_path('index.php');
+            $pointsHere = File::exists($index) && str_contains(File::get($index), base_path());
+            $this->check('Web giriş dosyası bu projeyi gösteriyor', $pointsHere, $pointsHere ? $index : "{$index} — deploy.sh yeniden çalıştırılmalı");
+        }
         $this->check('storage yazılabilir', is_writable(storage_path('framework')) && is_writable(storage_path('logs')));
         $this->check('bootstrap/cache yazılabilir', is_writable(base_path('bootstrap/cache')));
         $this->check('Derlenmiş ön yüz dosyaları', File::exists(public_path('build/manifest.json')), 'public/build/manifest.json');

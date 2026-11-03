@@ -57,6 +57,9 @@ return [
     // Proxy (ör. Cloudflare) arkasında gerçek IP ve https bilgisi için: "*" veya virgülle ayrılmış IP listesi.
     'trusted_proxies' => env('TRUSTED_PROXIES'),
 
+    // Ziyaretçinin eriştiği web klasörü proje içindeki public/ değilse (ör. /home/kullanici/public_html).
+    'public_path' => env('PUBLIC_PATH'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
