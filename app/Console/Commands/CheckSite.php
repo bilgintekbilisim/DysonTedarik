@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Formatter\OutputFormatter;
 use Throwable;
 
 /**
@@ -82,6 +83,7 @@ class CheckSite extends Command
     private function check(string $label, bool $ok, ?string $detail = null, bool $critical = true): void
     {
         $icon = $ok ? '<fg=green>✔</>' : ($critical ? '<fg=red>✘</>' : '<fg=yellow>!</>');
+        $detail = $detail ? OutputFormatter::escape($detail) : null;
         $this->line('  '.$icon.' '.mb_str_pad($label, 34).' '.($detail ? "<fg=gray>{$detail}</>" : ''));
 
         if (! $ok && $critical) {

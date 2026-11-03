@@ -1,4 +1,4 @@
-# Dyson Tedarik — yayın paketi oluşturur (Windows, PowerShell).
+﻿# Dyson Tedarik — yayın paketi oluşturur (Windows, PowerShell).
 #
 #   powershell -ExecutionPolicy Bypass -File scripts\paket-olustur.ps1
 #
@@ -45,4 +45,4 @@ try {
 
 $size = [math]::Round((Get-Item $zip).Length / 1MB, 1)
 Write-Host "Hazır: release\$name ($size MB)" -ForegroundColor Green
-Write-Host 'Sunucuda: bash deploy.sh ~/releases/' $name
+Write-Host "Sunucuda: bash deploy.sh ~/releases/$name"
