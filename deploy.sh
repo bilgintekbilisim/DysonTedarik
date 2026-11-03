@@ -12,6 +12,8 @@
 set -euo pipefail
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Yalnızca Windows'taki Git Bash provası için: PHP'nin anlayacağı C:/... biçimi. Linux'ta etkisizdir.
+if [ -n "${MSYSTEM:-}" ]; then APP_DIR="$(cd "$APP_DIR" && pwd -W)"; fi
 FIRST_INSTALL=0
 PACKAGE=""
 
@@ -87,9 +89,9 @@ sync_public() {
 PUBLIC_PATH="$(env_get PUBLIC_PATH)"
 PUBLIC_DISK_ROOT="$(env_get PUBLIC_DISK_ROOT)"
 [ -n "$PUBLIC_DISK_ROOT" ] || fail "PUBLIC_DISK_ROOT boş. Symlink kapalı olduğu için yüklemeler web klasöründeki gerçek bir klasöre yazılmalı (ör. PUBLIC_PATH/storage)."
-case "$PUBLIC_DISK_ROOT" in /*) ;; *) fail "PUBLIC_DISK_ROOT mutlak yol olmalı: $PUBLIC_DISK_ROOT" ;; esac
+case "$PUBLIC_DISK_ROOT" in /*|[A-Za-z]:/*) ;; *) fail "PUBLIC_DISK_ROOT mutlak yol olmalı: $PUBLIC_DISK_ROOT" ;; esac
 if [ -n "$PUBLIC_PATH" ]; then
-    case "$PUBLIC_PATH" in /*) ;; *) fail "PUBLIC_PATH mutlak yol olmalı: $PUBLIC_PATH" ;; esac
+    case "$PUBLIC_PATH" in /*|[A-Za-z]:/*) ;; *) fail "PUBLIC_PATH mutlak yol olmalı: $PUBLIC_PATH" ;; esac
     case "$PUBLIC_PATH/" in "$APP_DIR"/*) fail "PUBLIC_PATH proje klasörünün içinde olamaz." ;; esac
     case "$APP_DIR/" in "$PUBLIC_PATH"/*) fail "Proje klasörü web klasörünün (PUBLIC_PATH) içinde olamaz: .env ve kaynak kod indirilebilir olur." ;; esac
 fi
