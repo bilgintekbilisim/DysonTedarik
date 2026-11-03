@@ -58,7 +58,8 @@ class CheckSite extends Command
         $this->check('Yüklemeler web klasöründe', str_starts_with(realpath($uploads) ?: $uploads, $webRoot), "web klasörü: {$webRoot}");
         if (config('app.public_path')) {
             $index = public_path('index.php');
-            $pointsHere = File::exists($index) && str_contains(File::get($index), base_path());
+            $slash = fn (string $p) => str_replace('\\', '/', $p);
+            $pointsHere = File::exists($index) && str_contains($slash(File::get($index)), $slash(base_path()));
             $this->check('Web giriş dosyası bu projeyi gösteriyor', $pointsHere, $pointsHere ? $index : "{$index} — deploy.sh yeniden çalıştırılmalı");
         }
         $this->check('storage yazılabilir', is_writable(storage_path('framework')) && is_writable(storage_path('logs')));

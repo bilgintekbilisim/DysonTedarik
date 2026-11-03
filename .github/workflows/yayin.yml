@@ -1,0 +1,90 @@
+# Yayın paketini GitHub'da (Ubuntu, PHP 8.3) hazırlar, hostinge kopyalar ve deploy.sh'i çalıştırır.
+# ÖN KOŞUL: "SSH doğrulama" iş akışı aynı ortam için başarılı olmalı.
+# Hostingde Composer çalışmadığı için vendor/ burada kurulup pakete eklenir.
+#
+# Ortam gizlileri: ssh-dogrula.yml'deki beşi + APP_DIR (sunucudaki proje klasörü, ör. /home/dysonted/apps/dysontedarik-test)
+# "canli" ortamına GitHub'da "Required reviewers" koruması eklenmesi önerilir.
+
+name: Yayın
+
+on:
+  workflow_dispatch:
+    inputs:
+      ortam:
+        description: Yayın ortamı
+        type: choice
+        options: [test, canli]
+        default: test
+
+permissions:
+  contents: read
+
+concurrency:
+  group: yayin-${{ inputs.ortam }}
+  cancel-in-progress: false
+
+jobs:
+  yayin:
+    runs-on: ubuntu-24.04
+    environment: ${{ inputs.ortam }}
+    timeout-minutes: 20
+    env:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      APP_DIR: ${{ secrets.APP_DIR }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, gd, zip, fileinfo, pdo_mysql, bcmath
+          tools: composer:v2
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Testler
+        run: |
+          composer install --no-interaction --no-progress --prefer-dist
+          cp .env.example .env && php artisan key:generate
+          npm ci && npm run build
+          php artisan test
+
+      - name: Paket
+        id: paket
+        run: |
+          name="dysontedarik-$(date +%Y%m%d-%H%M)-${GITHUB_SHA::7}.zip"
+          mkdir -p build/app
+          git archive HEAD | tar -x -C build/app
+          (cd build/app && composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --no-progress --prefer-dist)
+          cp -R public/build build/app/public/build
+          (cd build/app && zip -qr "../$name" .)
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          ls -lh "build/$name"
+
+      - name: SSH anahtarı
+        env:
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          KNOWN: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+
+      - name: Yükle ve kur
+        env:
+          NAME: ${{ steps.paket.outputs.name }}
+        run: |
+          opts=(-i ~/.ssh/id_deploy -o BatchMode=yes -o StrictHostKeyChecking=yes)
+          ssh "${opts[@]}" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" 'mkdir -p ~/releases'
+          scp "${opts[@]}" -P "$SSH_PORT" "build/$NAME" "$SSH_USER@$SSH_HOST:releases/$NAME"
+          ssh "${opts[@]}" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "cd '$APP_DIR' && bash deploy.sh ~/releases/$NAME"
+
+      - name: Anahtarı sil
+        if: always()
+        run: rm -f ~/.ssh/id_deploy

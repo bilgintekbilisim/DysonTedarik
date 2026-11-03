@@ -1,0 +1,89 @@
+# GitHub'ın sunucularından hostinge SSH ile gerçekten bağlanılabildiğini doğrular.
+# cPanel Terminal'in çalışması dışarıdan SSH erişimini kanıtlamaz: hosting SSH'ı kapatmış,
+# farklı porta almış veya yalnızca izinli IP'lere açmış olabilir. Otomatik yayından ÖNCE çalıştırılır.
+#
+# Gerekli ortam (environment) gizlileri — Settings → Environments → "test" (ve "canli"):
+#   SSH_HOST         sunucu adı veya IP (ör. sunucuXX.hosting.com)
+#   SSH_PORT         SSH portu (hostingde genellikle 22 değil; cPanel → SSH Access'te yazar)
+#   SSH_USER         cPanel kullanıcı adı (dysonted)
+#   SSH_PRIVATE_KEY  bu iş için üretilmiş, şifresiz ed25519 özel anahtar (açık anahtarı cPanel'de yetkilendirilir)
+#   SSH_KNOWN_HOSTS  sunucunun doğrulanmış host anahtarı satırı (docs/DEPLOY.md §15) — ilk bağlantıda körü körüne güvenilmez
+
+name: SSH doğrulama
+
+on:
+  workflow_dispatch:
+    inputs:
+      ortam:
+        description: Hangi ortamın bilgileri denensin
+        type: choice
+        options: [test, canli]
+        default: test
+
+permissions:
+  contents: read
+
+jobs:
+  ssh:
+    runs-on: ubuntu-24.04
+    environment: ${{ inputs.ortam }}
+    timeout-minutes: 5
+    env:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+    steps:
+      - name: Gizliler tanımlı mı
+        env:
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          KNOWN: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          missing=""
+          for v in SSH_HOST SSH_PORT SSH_USER; do [ -n "${!v}" ] || missing="$missing $v"; done
+          [ -n "$KEY" ] || missing="$missing SSH_PRIVATE_KEY"
+          [ -n "$KNOWN" ] || missing="$missing SSH_KNOWN_HOSTS"
+          if [ -n "$missing" ]; then echo "::error::Eksik gizli:$missing"; exit 1; fi
+
+      - name: SSH anahtarı
+        env:
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          KNOWN: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+
+      - name: Port erişilebilir mi (TCP)
+        run: |
+          if timeout 10 bash -c "</dev/tcp/$SSH_HOST/$SSH_PORT"; then
+            echo "Port $SSH_PORT açık."
+          else
+            echo "::error::$SSH_HOST:$SSH_PORT GitHub'dan erişilemiyor. Hosting SSH'ı kapatmış, farklı porta almış veya IP kısıtlaması uyguluyor olabilir."
+            exit 1
+          fi
+
+      - name: Komut çalıştırma
+        run: |
+          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" \
+              -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=yes \
+              "$SSH_USER@$SSH_HOST" 'bash -s' <<'REMOTE'
+          set -e
+          echo "SSH_OK kullanıcı=$(whoami) kabuk=$SHELL"
+          PHP=/opt/cpanel/ea-php83/root/usr/bin/php
+          if [ -x "$PHP" ]; then "$PHP" -r 'echo "PHP ", PHP_VERSION, " disable_functions=", ini_get("disable_functions"), PHP_EOL;'; else echo "UYARI: $PHP yok"; fi
+          command -v unzip >/dev/null && echo "unzip var" || echo "unzip yok (deploy.sh PHP ile açar)"
+          mkdir -p ~/releases && touch ~/releases/.ssh-test && rm ~/releases/.ssh-test && echo "~/releases yazılabilir"
+          df -h ~ | tail -1
+          REMOTE
+
+      - name: Dosya aktarımı (scp)
+        run: |
+          echo "ssh-dogrulama $(date -u +%FT%TZ)" > ssh-test.txt
+          scp -i ~/.ssh/id_deploy -P "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+              ssh-test.txt "$SSH_USER@$SSH_HOST:releases/ssh-test.txt"
+          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" -o BatchMode=yes "$SSH_USER@$SSH_HOST" 'cat ~/releases/ssh-test.txt && rm ~/releases/ssh-test.txt'
+          echo "SSH ve scp GitHub'dan çalışıyor: otomatik yayın kullanılabilir."
+
+      - name: Anahtarı sil
+        if: always()
+        run: rm -f ~/.ssh/id_deploy
