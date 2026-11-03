@@ -10,6 +10,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Throwable;
 
 /**
@@ -46,12 +47,16 @@ class CheckSite extends Command
             $this->check('Veritabanı bağlantısı', false, $e->getMessage());
         }
 
-        $this->check('public/storage bağlantısı', File::exists(public_path('storage')), File::exists(public_path('storage')) ? 'var' : 'php artisan storage:link');
+        $uploads = Storage::disk('public')->path('');
+        $this->check('Yükleme klasörü web\'de erişilebilir', File::exists(public_path('storage')), File::exists(public_path('storage'))
+            ? (is_link(public_path('storage')) ? 'public/storage → bağlantı' : 'public/storage gerçek klasör')
+            : 'php artisan storage:link (veya PUBLIC_DISK_ROOT)');
+        $this->check('Yükleme klasörü yazılabilir', is_writable($uploads), $uploads);
         $this->check('storage yazılabilir', is_writable(storage_path('framework')) && is_writable(storage_path('logs')));
         $this->check('bootstrap/cache yazılabilir', is_writable(base_path('bootstrap/cache')));
         $this->check('Derlenmiş ön yüz dosyaları', File::exists(public_path('build/manifest.json')), 'public/build/manifest.json');
         $this->check('Filament dosyaları', File::isDirectory(public_path('js/filament')), 'php artisan filament:assets');
-        $this->check('Yükleme klasöründe PHP kapalı', File::exists(storage_path('app/public/.htaccess')), 'storage/app/public/.htaccess');
+        $this->check('Yükleme klasöründe PHP kapalı', File::exists($uploads.'.htaccess'), $uploads.'.htaccess');
         $this->check('Config önbelleği', app()->configurationIsCached(), app()->configurationIsCached() ? 'açık' : 'php artisan optimize', critical: false);
 
         $this->line('');

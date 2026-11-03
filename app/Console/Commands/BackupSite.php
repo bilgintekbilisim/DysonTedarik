@@ -7,6 +7,7 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use PDO;
 use RuntimeException;
 use ZipArchive;
@@ -42,7 +43,8 @@ class BackupSite extends Command
         $files = 0;
 
         if (! $this->option('no-files')) {
-            $base = storage_path('app/public');
+            // PUBLIC_DISK_ROOT tanımlıysa yüklemeler orada durur.
+            $base = rtrim(Storage::disk('public')->path(''), '/\\');
             foreach (File::allFiles($base, true) as $file) {
                 $zip->addFile($file->getPathname(), 'dosyalar/'.str_replace('\\', '/', $file->getRelativePathname()));
                 $files++;

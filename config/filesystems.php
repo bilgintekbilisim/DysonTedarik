@@ -40,7 +40,9 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            // Sunucu sembolik bağlantıya (storage:link) izin vermiyorsa PUBLIC_DISK_ROOT ile
+            // yüklemeler doğrudan web'den erişilen gerçek bir klasöre (ör. public/storage) yazılır.
+            'root' => env('PUBLIC_DISK_ROOT') ?: storage_path('app/public'),
             'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
             'visibility' => 'public',
             'throw' => false,
