@@ -37,6 +37,9 @@ $name = "dysontedarik-$(Get-Date -Format 'yyyyMMdd-HHmm')-$commit.zip"
 $work = Join-Path $env:TEMP "dt-paket-$commit-$(Get-Random)"
 $app = Join-Path $work 'app'
 New-Item -ItemType Directory -Force $app | Out-Null
+# TEMP kısa adla (ör. BILGIN~1) gelebilir; dosya yolları uzun adla döndüğü için gerçek yola çevrilir.
+$work = (Get-Item $work).FullName
+$app = (Get-Item $app).FullName
 
 try {
     Write-Host '==> Son commit temiz klasöre açılıyor' -ForegroundColor Cyan
