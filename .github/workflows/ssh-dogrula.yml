@@ -2,7 +2,7 @@
 # cPanel Terminal'in çalışması dışarıdan SSH erişimini kanıtlamaz: hosting SSH'ı kapatmış,
 # farklı porta almış veya yalnızca izinli IP'lere açmış olabilir. Otomatik yayından ÖNCE çalıştırılır.
 #
-# Gerekli ortam (environment) gizlileri — Settings → Environments → "test" (ve "canli"):
+# Gerekli ortam (environment) gizlileri — Settings → Environments → "canli":
 #   SSH_HOST         sunucu adı veya IP (ör. sunucuXX.hosting.com)
 #   SSH_PORT         SSH portu (hostingde genellikle 22 değil; cPanel → SSH Access'te yazar)
 #   SSH_USER         cPanel kullanıcı adı (dysonted)
@@ -13,12 +13,6 @@ name: SSH doğrulama
 
 on:
   workflow_dispatch:
-    inputs:
-      ortam:
-        description: Hangi ortamın bilgileri denensin
-        type: choice
-        options: [test, canli]
-        default: test
 
 permissions:
   contents: read
@@ -26,7 +20,7 @@ permissions:
 jobs:
   ssh:
     runs-on: ubuntu-24.04
-    environment: ${{ inputs.ortam }}
+    environment: canli
     timeout-minutes: 5
     env:
       SSH_HOST: ${{ secrets.SSH_HOST }}

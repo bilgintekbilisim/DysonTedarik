@@ -1,32 +1,28 @@
-# Yayın paketini GitHub'da (Ubuntu, PHP 8.3) hazırlar, hostinge kopyalar ve deploy.sh'i çalıştırır.
-# ÖN KOŞUL: "SSH doğrulama" iş akışı aynı ortam için başarılı olmalı.
+# master'a her gönderimde: testler → paket (GitHub'da, Ubuntu + PHP 8.3) → hostinge kopyalama → deploy.sh.
+# dysontedarik.com'a doğrudan yayın yapar. Testler geçmezse yayın yapılmaz.
+# ÖN KOŞULLAR: "SSH doğrulama" başarılı; sunucuda ilk kurulum (.env + deploy.sh --ilk-kurulum) bir kez elle yapılmış.
 # Hostingde Composer çalışmadığı için vendor/ burada kurulup pakete eklenir.
 #
-# Ortam gizlileri: ssh-dogrula.yml'deki beşi + APP_DIR (sunucudaki proje klasörü, ör. /home/dysonted/apps/dysontedarik-test)
-# "canli" ortamına GitHub'da "Required reviewers" koruması eklenmesi önerilir.
+# "canli" ortam gizlileri: ssh-dogrula.yml'deki beşi + APP_DIR (/home/dysonted/apps/dysontedarik)
 
 name: Yayın
 
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
-    inputs:
-      ortam:
-        description: Yayın ortamı
-        type: choice
-        options: [test, canli]
-        default: test
 
 permissions:
   contents: read
 
 concurrency:
-  group: yayin-${{ inputs.ortam }}
+  group: yayin-canli
   cancel-in-progress: false
 
 jobs:
   yayin:
     runs-on: ubuntu-24.04
-    environment: ${{ inputs.ortam }}
+    environment: canli
     timeout-minutes: 20
     env:
       SSH_HOST: ${{ secrets.SSH_HOST }}
@@ -34,6 +30,17 @@ jobs:
       SSH_USER: ${{ secrets.SSH_USER }}
       APP_DIR: ${{ secrets.APP_DIR }}
     steps:
+      - name: Gizliler tanımlı mı
+        env:
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          KNOWN: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          missing=""
+          for v in SSH_HOST SSH_PORT SSH_USER APP_DIR; do [ -n "${!v}" ] || missing="$missing $v"; done
+          [ -n "$KEY" ] || missing="$missing SSH_PRIVATE_KEY"
+          [ -n "$KNOWN" ] || missing="$missing SSH_KNOWN_HOSTS"
+          if [ -n "$missing" ]; then echo "::error::Eksik gizli (Settings → Environments → canli):$missing"; exit 1; fi
+
       - uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
@@ -81,7 +88,8 @@ jobs:
           NAME: ${{ steps.paket.outputs.name }}
         run: |
           opts=(-i ~/.ssh/id_deploy -o BatchMode=yes -o StrictHostKeyChecking=yes)
-          ssh "${opts[@]}" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" 'mkdir -p ~/releases'
+          ssh "${opts[@]}" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p ~/releases && test -f '$APP_DIR/.env'" \
+            || { echo "::error::Sunucuda $APP_DIR/.env yok: ilk kurulum Terminal'den elle yapılmalı (docs/DEPLOY.md §5)."; exit 1; }
           scp "${opts[@]}" -P "$SSH_PORT" "build/$NAME" "$SSH_USER@$SSH_HOST:releases/$NAME"
           ssh "${opts[@]}" -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "cd '$APP_DIR' && bash deploy.sh ~/releases/$NAME"
 
