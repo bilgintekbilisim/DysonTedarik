@@ -1,4 +1,4 @@
-# master'a her gönderimde: testler → paket (GitHub'da, Ubuntu + PHP 8.3) → hostinge kopyalama → deploy.sh.
+# main'e her gönderimde: testler → paket (GitHub'da, Ubuntu + PHP 8.3) → hostinge kopyalama → deploy.sh.
 # dysontedarik.com'a doğrudan yayın yapar. Testler geçmezse yayın yapılmaz.
 # ÖN KOŞULLAR: "SSH doğrulama" başarılı; sunucuda ilk kurulum (.env + deploy.sh --ilk-kurulum) bir kez elle yapılmış.
 # Hostingde Composer çalışmadığı için vendor/ burada kurulup pakete eklenir.
@@ -9,7 +9,7 @@ name: Yayın
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
