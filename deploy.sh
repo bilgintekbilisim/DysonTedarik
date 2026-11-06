@@ -66,17 +66,17 @@ sync_public() {
     sed "s#__APP_DIR__#${APP_DIR}#g" deploy/public_html/index.php > "$target/index.php.yeni"
     mv -f "$target/index.php.yeni" "$target/index.php"
 
-    # cPanel MultiPHP Manager domain'in PHP sürümünü .htaccess'e bir blok olarak yazar; korunmazsa
-    # site sunucunun varsayılan PHP'siyle (8.5) çalışır.
-    local begin='# php -- BEGIN cPanel-generated handler, do not edit'
-    local end='# php -- END cPanel-generated handler, do not edit'
-    local handler=""
+    # cPanel MultiPHP Manager domain'in PHP sürümünü, MultiPHP INI Editor de PHP ayarlarını .htaccess'e
+    # blok olarak yazar; korunmazsa site sunucunun varsayılan PHP'siyle (8.5) ve varsayılan ayarlarla çalışır.
+    local handler="" ini=""
     if [ -f "$target/.htaccess" ]; then
-        handler="$(sed -n "/^${begin}\$/,/^${end}\$/p" "$target/.htaccess")"
+        handler="$(sed -n '/^# php -- BEGIN cPanel-generated handler, do not edit$/,/^# php -- END cPanel-generated handler, do not edit$/p' "$target/.htaccess")"
+        ini="$(sed -n '/^# BEGIN cPanel-generated php ini directives, do not edit$/,/^# END cPanel-generated php ini directives, do not edit$/p' "$target/.htaccess")"
         [ -f "$target/.htaccess.yedek" ] || cp "$target/.htaccess" "$target/.htaccess.yedek"
     fi
     {
         cat public/.htaccess
+        if [ -n "$ini" ]; then printf '\n%s\n' "$ini"; fi
         if [ -n "$handler" ]; then printf '\n%s\n' "$handler"; fi
     } > "$target/.htaccess.yeni"
     mv -f "$target/.htaccess.yeni" "$target/.htaccess"
