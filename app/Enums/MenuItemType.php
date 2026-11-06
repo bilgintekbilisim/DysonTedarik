@@ -30,6 +30,7 @@ enum MenuItemType: string implements HasLabel
             'home' => 'Ana sayfa',
             'products.index' => 'Tüm ürünler',
             'brands.index' => 'Markalar',
+            'catalogs.index' => 'E-Katalog',
             'contact' => 'İletişim',
             'quote.create' => 'Teklif iste',
         ];

@@ -4,6 +4,7 @@
     $email = $site->get('contact.email');
     $quoteUrl = Route::has('quote.create') ? route('quote.create') : null;
     $socials = array_filter($site->group('social'));
+    $logo = $site->get('general.logo');
 @endphp
 
 <header x-data="{ mobileOpen: false, searchOpen: false }" @keydown.escape.window="mobileOpen = false" class="relative z-30">
@@ -35,14 +36,14 @@
 
     {{-- Logo, arama, eylemler --}}
     <div class="border-b border-slate-200 bg-white">
-        <div class="container-site flex h-16 items-center gap-3 sm:h-20 lg:gap-8">
+        <div class="container-site flex h-[4.5rem] items-center gap-3 sm:h-24 lg:gap-8">
             <button type="button" class="-ms-2 rounded-lg p-2 text-navy-900 lg:hidden" @click="mobileOpen = true" aria-label="Menüyü aç" :aria-expanded="mobileOpen">
                 <x-heroicon-o-bars-3 class="size-6" aria-hidden="true" />
             </button>
 
             <a href="{{ route('home') }}" class="flex shrink-0 items-center" aria-label="{{ $siteName }} — Ana sayfa">
-                @if ($logo = $site->get('general.logo'))
-                    <img src="{{ Storage::disk('public')->url($logo) }}" alt="{{ $siteName }}" class="h-9 w-auto sm:h-11" width="180" height="44">
+                @if ($logo)
+                    <img src="{{ Storage::disk('public')->url($logo) }}" alt="{{ $siteName }}" class="h-11 w-auto sm:h-14" width="230" height="56">
                 @else
                     <span class="text-lg font-bold tracking-tight text-navy-950 sm:text-xl">
                         {{ $siteName }}<span class="text-accent-500">.</span>
@@ -146,8 +147,14 @@
              x-transition:enter="transition duration-200" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
              x-transition:leave="transition duration-150" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
              class="absolute inset-y-0 start-0 flex w-[85%] max-w-sm flex-col bg-white shadow-2xl">
-            <div class="flex h-16 items-center justify-between border-b border-slate-200 px-4">
-                <span class="font-bold text-navy-950">{{ $siteName }}</span>
+            <div class="flex h-20 items-center justify-between border-b border-slate-200 px-4">
+                <a href="{{ route('home') }}" class="flex items-center" aria-label="{{ $siteName }} — Ana sayfa">
+                    @if ($logo)
+                        <img src="{{ Storage::disk('public')->url($logo) }}" alt="{{ $siteName }}" class="h-12 w-auto" width="200" height="48">
+                    @else
+                        <span class="font-bold text-navy-950">{{ $siteName }}</span>
+                    @endif
+                </a>
                 <button type="button" class="rounded-lg p-2 text-navy-900" @click="mobileOpen = false" aria-label="Menüyü kapat">
                     <x-heroicon-o-x-mark class="size-6" aria-hidden="true" />
                 </button>

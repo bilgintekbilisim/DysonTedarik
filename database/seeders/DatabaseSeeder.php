@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             DysonCatalogSeeder::class,
             KarbosanCatalogSeeder::class,
             CorporateContentSeeder::class,
+            ECatalogSeeder::class,
         ]);
     }
 }

@@ -20,6 +20,7 @@ class MenuSeeder extends Seeder
             ['Ana Sayfa', MenuItemType::Route, 'home'],
             ['Ürünler', MenuItemType::Route, 'products.index', [], true],
             ['Markalar', MenuItemType::Route, 'brands.index'],
+            ['E-Katalog', MenuItemType::Route, 'catalogs.index'],
             ['Kurumsal', MenuItemType::Url, '#', array_map(fn ($slug) => [null, MenuItemType::Page, $slug], $corporate)],
             ['Teklif İste', MenuItemType::Route, 'quote.create'],
             ['İletişim', MenuItemType::Route, 'contact'],
@@ -31,6 +32,7 @@ class MenuSeeder extends Seeder
         $this->menu(MenuLocation::FooterQuick, 'Footer — Hızlı Bağlantılar', [
             ['Tüm Ürünler', MenuItemType::Route, 'products.index'],
             ['Markalar', MenuItemType::Route, 'brands.index'],
+            ['E-Katalog', MenuItemType::Route, 'catalogs.index'],
             ['Teklif İste', MenuItemType::Route, 'quote.create'],
             ['İletişim', MenuItemType::Route, 'contact'],
         ]);

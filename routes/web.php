@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ECatalogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
@@ -23,6 +24,8 @@ Route::get('/arama/oneriler', SearchSuggestionController::class)
 
 Route::get('/markalar', [BrandController::class, 'index'])->name('brands.index');
 Route::get('/marka/{brand:slug}', [BrandController::class, 'show'])->name('brands.show');
+
+Route::get('/e-katalog', ECatalogController::class)->name('catalogs.index');
 
 Route::get('/iletisim', [ContactController::class, 'show'])->name('contact');
 Route::post('/iletisim', [ContactController::class, 'store'])->middleware('throttle:forms')->name('contact.store');
