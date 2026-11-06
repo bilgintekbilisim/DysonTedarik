@@ -19,7 +19,7 @@ class SearchSuggestionController extends Controller
         }
 
         $products = Product::query()->active()
-            ->search($term)
+            ->searchOrSimilar($term)
             ->with(['brand:id,name', 'coverImage'])
             ->orderByRaw('CASE WHEN code = ? THEN 0 WHEN name LIKE ? THEN 1 ELSE 2 END', [$term, addcslashes($term, '%_\\').'%'])
             ->orderBy('name')

@@ -9,9 +9,11 @@ use App\Filament\Support\Fields;
 use App\Models\Brand;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -108,6 +110,11 @@ class BrandResource extends Resource
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make()
+                    ->modalDescription(fn (Brand $record) => $record->products_count
+                        ? "Bu markaya bağlı {$record->products_count} ürün var; ürünler silinmez, marka geri alınana kadar ürünlerde ve filtrelerde görünmez. Silinen markayı \"Silinenler\" filtresinden geri alabilirsiniz."
+                        : 'Silinen markayı "Silinenler" filtresinden geri alabilirsiniz.'),
+                RestoreAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -37,7 +37,7 @@ class ProductCatalog
             $this->inCategory($query, $category);
         }
 
-        $query->search($filters['q'] ?? null);
+        $query->searchOrSimilar($filters['q'] ?? null);
 
         if ($brands = $this->list($filters['marka'] ?? null)) {
             $query->whereHas('brand', fn (Builder $b) => $b->whereIn('slug', $brands));
@@ -68,11 +68,12 @@ class ProductCatalog
      *
      * @return array{brands: Collection, attributes: Collection, children: Collection}
      */
-    public function facets(?Category $category): array
+    public function facets(?Category $category, ?string $search = null): array
     {
         $productIds = Product::query()->active()
             ->when($category, fn (Builder $q) => $this->inCategory($q, $category))
-            ->pluck('id');
+            ->searchOrSimilar($search)
+            ->pluck('products.id');
 
         $brands = Brand::query()->active()
             ->whereHas('products', fn (Builder $q) => $q->whereIn('products.id', $productIds))

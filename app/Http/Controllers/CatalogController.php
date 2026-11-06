@@ -17,7 +17,7 @@ class CatalogController extends Controller
     {
         $filters = $this->filters($request);
         $products = $this->catalog->paginate(null, $filters);
-        $facets = $this->catalog->facets(null);
+        $facets = $this->catalog->facets(null, $filters['q']);
 
         $seo = (new Seo(title: filled($filters['q']) ? "\"{$filters['q']}\" arama sonuçları" : 'Ürünler'))
             ->crumb('Ana Sayfa', route('home'))
@@ -34,7 +34,7 @@ class CatalogController extends Controller
 
         $filters = $this->filters($request);
         $products = $this->catalog->paginate($category, $filters);
-        $facets = $this->catalog->facets($category);
+        $facets = $this->catalog->facets($category, $filters['q']);
 
         $seo = Seo::for($category, $category->image)->crumb('Ana Sayfa', route('home'))->crumb('Ürünler', route('products.index'));
 

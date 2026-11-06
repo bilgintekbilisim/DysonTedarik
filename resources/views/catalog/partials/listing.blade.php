@@ -29,19 +29,8 @@
                     </button>
                 </div>
 
-                @if ($facets['children']->isNotEmpty())
-                    <section class="border-b border-slate-200 pb-5">
-                        <h2 class="text-sm font-semibold">{{ isset($category) ? 'Alt kategoriler' : 'Kategoriler' }}</h2>
-                        <ul class="mt-3 space-y-1">
-                            @foreach ($facets['children'] as $child)
-                                <li><a href="{{ route('categories.show', $child) }}" class="block rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-navy-50 hover:text-navy-950">{{ $child->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </section>
-                @endif
-
                 @if ($facets['brands']->isNotEmpty())
-                    <fieldset x-data="{ more: false }" class="border-b border-slate-200 py-5">
+                    <fieldset x-data="{ more: false }" class="border-b border-slate-200 pb-5">
                         <legend class="text-sm font-semibold text-navy-950">Marka</legend>
                         <div class="mt-3 space-y-2">
                             @foreach ($facets['brands'] as $brand)
@@ -57,6 +46,17 @@
                             <button type="button" @click="more = !more" class="mt-2 text-sm font-medium text-accent-600" x-text="more ? 'Daha az göster' : 'Tümünü göster'">Tümünü göster</button>
                         @endif
                     </fieldset>
+                @endif
+
+                @if ($facets['children']->isNotEmpty())
+                    <section class="border-b border-slate-200 py-5">
+                        <h2 class="text-sm font-semibold">{{ isset($category) ? 'Alt kategoriler' : 'Kategoriler' }}</h2>
+                        <ul class="mt-3 space-y-1">
+                            @foreach ($facets['children'] as $child)
+                                <li><a href="{{ route('categories.show', $child) }}" class="block rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-navy-50 hover:text-navy-950">{{ $child->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </section>
                 @endif
 
                 @foreach ($facets['attributes'] as $attribute)

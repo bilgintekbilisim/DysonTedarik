@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\MediaLibrary;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,9 +26,8 @@ class Media extends Model
             $media->uploaded_by ??= auth()->id();
         });
 
-        static::deleted(function (Media $media) {
-            Storage::disk($media->disk ?: 'public')->delete($media->path);
-        });
+        // Kütüphaneden silinen dosya diskten ve kullanıldığı kayıtlardan da kaldırılır.
+        static::deleted(fn (Media $media) => app(MediaLibrary::class)->purge($media->path));
     }
 
     public function url(): string

@@ -40,7 +40,12 @@ class Category extends Model
     protected static function booted(): void
     {
         // Menüler, mega menü ve sitemap bu kayıtların yayın durumuna bağlı.
-        static::saved(fn () => PublicCache::flush());
+        static::saved(function (Category $category) {
+            PublicCache::flush();
+            if ($category->wasChanged('name')) {
+                Product::reindexSearch(Product::query()->where('category_id', $category->id));
+            }
+        });
         static::deleted(fn () => PublicCache::flush());
 
         static::saving(function (Category $category) {

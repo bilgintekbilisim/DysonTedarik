@@ -38,7 +38,12 @@ class Brand extends Model
     protected static function booted(): void
     {
         // Menüler, mega menü ve sitemap bu kayıtların yayın durumuna bağlı.
-        static::saved(fn () => PublicCache::flush());
+        static::saved(function (Brand $brand) {
+            PublicCache::flush();
+            if ($brand->wasChanged('name')) {
+                Product::reindexSearch(Product::query()->where('brand_id', $brand->id));
+            }
+        });
         static::deleted(fn () => PublicCache::flush());
 
         static::saving(function (Brand $brand) {

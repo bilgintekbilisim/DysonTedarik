@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Media;
 use App\Filament\Resources\Media\Pages\ManageMedia;
 use App\Filament\Support\Fields;
 use App\Models\Media;
+use App\Services\MediaLibrary;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
@@ -80,15 +81,17 @@ class MediaResource extends Resource
         return $table
             ->defaultSort('created_at', 'desc')
             ->columns([
-                ImageColumn::make('path')
+                ImageColumn::make('preview')
                     ->label('Önizleme')
                     ->disk('public')
-                    ->imageHeight(48),
+                    ->imageHeight(48)
+                    ->getStateUsing(fn (Media $record) => $record->isImage() ? $record->path : null)
+                    ->defaultImageUrl(fn (Media $record) => $record->isImage() ? null : 'data:image/svg+xml;utf8,'.rawurlencode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="6" fill="#fee2e2"/><text x="24" y="30" font-family="Arial" font-size="13" font-weight="700" fill="#b91c1c" text-anchor="middle">PDF</text></svg>')),
                 TextColumn::make('original_name')
                     ->label('Dosya adı')
-                    ->searchable()
+                    ->searchable(['original_name', 'path', 'alt'])
                     ->limit(40)
-                    ->description(fn (Media $record) => $record->alt),
+                    ->description(fn (Media $record) => $record->path),
                 TextColumn::make('folder')
                     ->label('Klasör')
                     ->badge()
@@ -101,6 +104,14 @@ class MediaResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('folder')->label('Klasör')->options(self::FOLDERS),
+                SelectFilter::make('type')
+                    ->label('Tür')
+                    ->options(['image' => 'Görsel', 'pdf' => 'PDF'])
+                    ->query(fn ($query, array $data) => match ($data['value'] ?? null) {
+                        'image' => $query->where('mime_type', 'like', 'image/%'),
+                        'pdf' => $query->where('mime_type', 'application/pdf'),
+                        default => $query,
+                    }),
             ])
             ->recordActions([
                 Action::make('copyUrl')
@@ -109,10 +120,18 @@ class MediaResource extends Resource
                     ->color('gray')
                     ->alpineClickHandler(fn (Media $record) => 'window.navigator.clipboard.writeText('.json_encode($record->url()).'); $tooltip(\'Kopyalandı\')'),
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
+                    ->modalDescription(function (Media $record) {
+                        $usages = app(MediaLibrary::class)->usages($record->path);
+
+                        return $usages
+                            ? 'Bu dosya şu yerlerde kullanılıyor ve oradan da kaldırılacak: '.implode(', ', $usages).'. Zorunlu görsel/dosya olarak kullanıldığı kayıt (ürün görseli, slayt, e-katalog) silinir. Bu işlem geri alınamaz.'
+                            : 'Dosya sunucudan kalıcı olarak silinecek. Bu işlem geri alınamaz.';
+                    }),
             ])
             ->toolbarActions([
-                DeleteBulkAction::make(),
+                DeleteBulkAction::make()
+                    ->modalDescription('Seçilen dosyalar sunucudan ve kullanıldıkları yerlerden (ürün görselleri, marka logoları, slaytlar, kataloglar) kalıcı olarak silinecek.'),
             ]);
     }
 
