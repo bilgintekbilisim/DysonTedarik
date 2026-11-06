@@ -1546,7 +1546,7 @@
             {
                 "name": "Döküm Sabit Tezgah Kesme Diskleri",
                 "source_url": "https://www.karbosan.com/tr/dokum-sabit-tezgah-kesme-diskleri/",
-                "image_url": "https://www.karbosan.com/img/upload/AdsÄ±z tasarÄ±m (5)_1768557738.png",
+                "image_url": "https://www.karbosan.com/img/upload/Adsız tasarım (5)_1768557738.png",
                 "types": [
                     "T41"
                 ],
@@ -9429,6 +9429,4608 @@
                             "955326",
                             "Silisyum Karbür",
                             "100"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Disk Zımparalar",
+        "source_url": "https://www.karbosan.com/tr/disk-zimpara/",
+        "products": [
+            {
+                "name": "AFR71 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/afr71-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/ajfr21zimpara_1726095085.png",
+                "types": [
+                    "Bombeli Fiber"
+                ],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "CFR91 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/cfr91-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/CFR91_Disk_Zimpara_1696315359.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Cam",
+                    "Demir İçermeyen Metaller",
+                    "Pirinç"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "ZFR91 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/zfr91-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/ZFR91_Disk_Zimpara_1696316275.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "CEFR91 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/cefr91-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/CEFR91_Disk_Zimpara_1696313916.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "AXOP21 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/axop21-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/AX0P21_Disk_Zimpara_1696313099.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Demir İçermeyen Metaller",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "AXR21 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/axr21-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/AXR21_Disk_Zimpara_1734690903.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Demir İçermeyen Metaller",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "ZXR11 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/zxr11-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/ZXR11_Disk_Zimpara_1696316822.png",
+                "types": [],
+                "methods": [
+                    "Parke Zımpara",
+                    "Sonsuz Bant",
+                    "Taşlama Motoru",
+                    "Dairesel Zımpara Makinası",
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Paslanmaz Çelik (Inox)",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "ZXR12 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/zxr12-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/ZXR12_Disk_Zimpara_1704713629.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "AYXR11 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/ayxr11-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/AYXR11_Disk_Zimpara_1696313504.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Bakır",
+                    "Demir İçermeyen Metaller",
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi",
+                    "Tekstil Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "ZYYR11 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/zyyr11-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/ZYYR11_Disk_Zimpara_1696317508.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Dökme Demir",
+                    "Paslanmaz Çelik (Inox)",
+                    "Plastik/ Kauçuk/ Deri",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi",
+                    "Tekstil Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "CYXR11 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/cyxr11-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/CYXR11_Disk_Zimpara_1696315735.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)",
+                    "Demir Dışı Metaller",
+                    "Pirinç",
+                    "Zamak",
+                    "Cam",
+                    "Yüksek Alaşımlı Çelikler",
+                    "Deri",
+                    "Plastik",
+                    "Bakır",
+                    "Alüminyum",
+                    "Kauçuk",
+                    "Dökme Çelik"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi",
+                    "Tekstil Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "CEYYR21 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/ceyyr21-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/CEYYR21_Disk_Zimpara_1696314317.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)",
+                    "Demir Dışı Metaller",
+                    "Pirinç",
+                    "Zamak",
+                    "Cam",
+                    "Yüksek Alaşımlı Çelikler",
+                    "Deri",
+                    "Plastik",
+                    "Bakır",
+                    "Alüminyum",
+                    "Kauçuk",
+                    "Dökme Çelik"
+                ],
+                "sectors": [],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "AGYYR21 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/agyyr21-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/AGYYR21_Disk_Zimpara_1704713582.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Düşük Alaşımlı Çelikler",
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi",
+                    "Tekstil Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            },
+            {
+                "name": "AGYYR24 Disk Zımpara",
+                "source_url": "https://www.karbosan.com/tr/agyyr24-disk-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/AGYYR24_Disk_Zimpara_1704713553.png",
+                "types": [],
+                "methods": [
+                    "Dairesel Zımpara Makinası"
+                ],
+                "areas": [
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik",
+                    "Düşük Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi",
+                    "Makina Sanayi",
+                    "Otomotiv Sanayi",
+                    "Deri Sanayi",
+                    "Plastik Sanayi",
+                    "Tekstil Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [],
+                    "rows": []
+                }
+            }
+        ]
+    },
+    {
+        "group": "Tabaka Zımparalar",
+        "source_url": "https://www.karbosan.com/tr/tabaka-zimparalar/",
+        "products": [
+            {
+                "name": "Elyaf Tabaka",
+                "source_url": "https://www.karbosan.com/tr/elyaf-tabaka/",
+                "image_url": "https://www.karbosan.com/img/upload/Elyaf_Tabaka_1768398926.png",
+                "types": [],
+                "methods": [
+                    "El ile Kullanım"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Dökme Çelik",
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Otomotiv Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "230x280",
+                            "005196",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Sünger Takoz",
+                "source_url": "https://www.karbosan.com/tr/sunger-takoz/",
+                "image_url": "https://www.karbosan.com/img/upload/Sunger_Zimpara_1768399185.png",
+                "types": [],
+                "methods": [
+                    "El ile Kullanım"
+                ],
+                "areas": [
+                    "Ahşap",
+                    "Düşük Alaşımlı Çelikler",
+                    "Dökme Çelik",
+                    "Paslanmaz Çelik (Inox)",
+                    "Yüksek Alaşımlı Çelikler",
+                    "Çelikler",
+                    "Demir Dışı Metaller"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Otomotiv Sanayi",
+                    "Makina Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Ebat",
+                        "Artikel",
+                        "Kum",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "92 x 65 x 24",
+                            "980011",
+                            "60",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980012",
+                            "80",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980001",
+                            "100",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980002",
+                            "120",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980003",
+                            "150",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980004",
+                            "180",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980005",
+                            "220",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980006",
+                            "240",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980007",
+                            "280",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980008",
+                            "320",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980009",
+                            "360",
+                            "100"
+                        ],
+                        [
+                            "92 x 65 x 24",
+                            "980010",
+                            "400",
+                            "100"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Seramik Taşlama Taşları",
+        "source_url": "https://www.karbosan.com/tr/taslama-taslari-2/",
+        "products": [
+            {
+                "name": "Alüminyum Oksit Taşlama Taşı",
+                "source_url": "https://www.karbosan.com/tr/aluminyum-oksit-taslama-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/NK_Seramik_Taslama_Tasi_1768218138.png",
+                "types": [
+                    "T1"
+                ],
+                "methods": [
+                    "Sabit Taşlama Tezgahı",
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Takım Çelikleri",
+                    "Yumuşak Çelikler",
+                    "Yüksek Alaşımlı Çelikler / Isıya Duyarlı Çelik",
+                    "Tüm yapı çelikleri"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Çevresel Hız",
+                        "24",
+                        "36",
+                        "46",
+                        "60"
+                    ],
+                    "rows": [
+                        [
+                            "T1",
+                            "75 x 13 x 10",
+                            "35",
+                            "•",
+                            "913010",
+                            "913020",
+                            "913030"
+                        ],
+                        [
+                            "T1",
+                            "100 x 13 x 10",
+                            "35",
+                            "•",
+                            "913040",
+                            "913050",
+                            "913060"
+                        ],
+                        [
+                            "T1",
+                            "100 x 16 x 20",
+                            "35",
+                            "•",
+                            "913070",
+                            "913080",
+                            "913090"
+                        ],
+                        [
+                            "T1",
+                            "125 x 16 x 16",
+                            "35",
+                            "•",
+                            "914790",
+                            "914800",
+                            "914810"
+                        ],
+                        [
+                            "T1",
+                            "125 x 20 x 20",
+                            "35",
+                            "914820",
+                            "914830",
+                            "914840",
+                            "914850"
+                        ],
+                        [
+                            "T1",
+                            "150 x 20 x 20",
+                            "35",
+                            "914860",
+                            "914870",
+                            "914880",
+                            "914890"
+                        ],
+                        [
+                            "T1",
+                            "150 x 25 x 20",
+                            "35",
+                            "914900",
+                            "914910",
+                            "914920",
+                            "914930"
+                        ],
+                        [
+                            "T1",
+                            "175 x 20 x 20",
+                            "35",
+                            "914940",
+                            "914950",
+                            "914960",
+                            "914970"
+                        ],
+                        [
+                            "T1",
+                            "175 x 25 x 20",
+                            "35",
+                            "914980",
+                            "914990",
+                            "920000",
+                            "920010"
+                        ],
+                        [
+                            "T1",
+                            "200x 20 x20",
+                            "35",
+                            "920020",
+                            "920030",
+                            "920040",
+                            "920050"
+                        ],
+                        [
+                            "T1",
+                            "200x 25 x20",
+                            "35",
+                            "920060",
+                            "920070",
+                            "920080",
+                            "920090"
+                        ],
+                        [
+                            "T1",
+                            "200 x 30 x 20",
+                            "35",
+                            "920100",
+                            "920110",
+                            "920120",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "200x 32 x20",
+                            "35",
+                            "920130",
+                            "920140",
+                            "920150",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "250x 25 x25",
+                            "35",
+                            "920180",
+                            "920190",
+                            "920200",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "250 x 30 x 25",
+                            "35",
+                            "920210",
+                            "920220",
+                            "920230",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "250x 32 x25",
+                            "35",
+                            "920240",
+                            "920250",
+                            "920260",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "250 x 40 x 25",
+                            "35",
+                            "920270",
+                            "920280",
+                            "920290",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "300 x 30 x 30",
+                            "35",
+                            "920300",
+                            "920310",
+                            "920320",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "300 x 32 x 30",
+                            "35",
+                            "920330",
+                            "920340",
+                            "920350",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "300 x 40 x 30",
+                            "35",
+                            "920360",
+                            "920370",
+                            "920380",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "350 x 40 x 40",
+                            "35",
+                            "920390",
+                            "920400",
+                            "920410",
+                            "•"
+                        ],
+                        [
+                            "T1",
+                            "400 x 40 x 40",
+                            "35",
+                            "920420",
+                            "920430",
+                            "920440",
+                            "•"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "SCG Elmas Bileme Taşı",
+                "source_url": "https://www.karbosan.com/tr/scg-elmas-bileme-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/SCG_Seramik_Taslama_Zeminsiz_1768219055.png",
+                "types": [
+                    "T1"
+                ],
+                "methods": [
+                    "Sabit Taşlama Tezgahı"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler",
+                    "Demir Dışı Metaller",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel",
+                        "Palet",
+                        "Barkod"
+                    ],
+                    "rows": [
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "125 x 20 x 20",
+                            "920450",
+                            "21",
+                            "21"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "125x 25 x20",
+                            "920460"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "150 x 20 x 20",
+                            "920470"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "150 x 25 x 20",
+                            "920480"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "175x 20 x20",
+                            "920490"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "175x 25 x20",
+                            "920500"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "200x 20 x20",
+                            "920510"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "200x 25 x20",
+                            "920510"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "200x 32 x20",
+                            "920520"
+                        ],
+                        [
+                            "T1",
+                            "C 80 J5 V",
+                            "200x 32 x20",
+                            "920530"
+                        ],
+                        [
+                            "T1",
+                            "SCG 80 J 5 V",
+                            "250x 25 x25",
+                            "920540"
+                        ],
+                        [
+                            "T1",
+                            "SCG 80 J 5 V",
+                            "250x 32 x25",
+                            "920550"
+                        ],
+                        [
+                            "T1",
+                            "SCG 80 J 5 V",
+                            "300 x 30 x 30",
+                            "920560"
+                        ],
+                        [
+                            "T1",
+                            "SCG 80 J 5 V",
+                            "300 x 32 x 30",
+                            "920570"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Çelik Taşlama Taşı",
+                "source_url": "https://www.karbosan.com/tr/celik-taslama-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/K_Celik_Tasi_1768220958.png",
+                "types": [
+                    "T1"
+                ],
+                "methods": [
+                    "Silindirik Taşlama",
+                    "Yüzey Taşlama"
+                ],
+                "areas": [
+                    "İmalat Çelikleri",
+                    "Yumuşak Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel"
+                    ],
+                    "rows": [
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "150 x 20 x 20",
+                            "914450"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "175 x 20 x 20",
+                            "914480"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "250x 25 x76.2",
+                            "914490"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "250x 30 x76.2",
+                            "914520"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "250x 32 x76.2",
+                            "914770"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "250x 40 x76.2",
+                            "914560"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "300x 40 x127",
+                            "914590"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "350x 40 x127",
+                            "914640"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "350x 50 x127",
+                            "914670"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "400x 35 x127",
+                            "916000"
+                        ],
+                        [
+                            "T1",
+                            "EKR 36 K6V",
+                            "400x 50 x127",
+                            "908902"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "150 x 20 x 20",
+                            "914460"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "175 x 20 x 20",
+                            "914730"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "200x 20 x20",
+                            "914750"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "250x 25 x76.2",
+                            "914500"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "250x 30 x76.2",
+                            "914530"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "250x 32 x76.2",
+                            "914780"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "250x 40 x76.2",
+                            "914570"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "300x 40 x76.2",
+                            "914620"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "300x 40 x127",
+                            "914600"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "350x 40 x127",
+                            "914650"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "350x 50 x127",
+                            "914680"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "400x 35 x127",
+                            "916000"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "400x 40 x127",
+                            "914710"
+                        ],
+                        [
+                            "T1",
+                            "EKR 46 K6V",
+                            "400x 50 x127",
+                            "903804"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "150 x 20 x 20",
+                            "914470"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "175 x 20 x 20",
+                            "914740"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "200x 20 x20",
+                            "914760"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "250x 25 x76.2",
+                            "914510"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "250x 30 x76.2",
+                            "914540"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "250x 32 x76.2",
+                            "914550"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "250x 40 x76.2",
+                            "914580"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "300x 40 x76.2",
+                            "914630"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "300x 40 x127",
+                            "914610"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "350x 40 x127",
+                            "914660"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "350x 50 x127",
+                            "914690"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "400x 40 x127",
+                            "914720"
+                        ],
+                        [
+                            "T1",
+                            "EKR 60 K6V",
+                            "400x 50 x127",
+                            "903805"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Cam Taşı",
+                "source_url": "https://www.karbosan.com/tr/cam-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/SCG_Cam_Taslama_Tasi_300x30x30_914370_1768221216.png",
+                "types": [
+                    "T1"
+                ],
+                "methods": [],
+                "areas": [
+                    "Cam"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel"
+                    ],
+                    "rows": [
+                        [
+                            "T1",
+                            "C100 L5 V",
+                            "300 x 30 x 30",
+                            "914370"
+                        ],
+                        [
+                            "T1",
+                            "C100 L5 V",
+                            "350x 35 x30",
+                            "914380"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Avize Taşı",
+                "source_url": "https://www.karbosan.com/tr/avize-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/Seramik_Cam_Tasi_1768221400.png",
+                "types": [
+                    "T1",
+                    "T5"
+                ],
+                "methods": [],
+                "areas": [
+                    "Kristal"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel"
+                    ],
+                    "rows": [
+                        [
+                            "T1",
+                            "NK 80 M6 V",
+                            "350 x 50 x 40",
+                            "914430"
+                        ],
+                        [
+                            "T1",
+                            "NK 80 M6 V",
+                            "400x 50 x40",
+                            "914390"
+                        ],
+                        [
+                            "T5",
+                            "NK 80 M6 V",
+                            "350 x 50 x 40",
+                            "914440"
+                        ],
+                        [
+                            "T5",
+                            "NK 80 M6 V",
+                            "180x30x40",
+                            "914440"
+                        ],
+                        [
+                            "T5",
+                            "NK 80 M6 V",
+                            "400x 50 x40",
+                            "914420"
+                        ],
+                        [
+                            "T5",
+                            "NK 80 M6 V",
+                            "180x30x40",
+                            "914420"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Alüminyum Oksit Mozaik Silme Taşı",
+                "source_url": "https://www.karbosan.com/tr/aluminyum-oksit-mozaik-silme-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/NK_Mozaik_Silme_Tasi_1768222329.png",
+                "types": [
+                    "Düz"
+                ],
+                "methods": [
+                    "El ile Kullanım"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler",
+                    "Demir Dışı Metaller",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak",
+                    "Pirinç",
+                    "Ahşap",
+                    "Taş"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi",
+                    "Cam Sanayi",
+                    "Ahşap Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel"
+                    ],
+                    "rows": [
+                        [
+                            "NK 16 Q5 V",
+                            "100x 50 x25",
+                            "-"
+                        ],
+                        [
+                            "NK 16 Q5 V",
+                            "100x 50 x50",
+                            "920640"
+                        ],
+                        [
+                            "NK 16 Q5 V",
+                            "100x 100 x50",
+                            "-"
+                        ],
+                        [
+                            "NK 16 Q5 V",
+                            "200x 100 x50",
+                            "-"
+                        ],
+                        [
+                            "NK 24 Q5 V",
+                            "100x 50 x25",
+                            "920610"
+                        ],
+                        [
+                            "NK 24 Q5 V",
+                            "100x 50 x50",
+                            "920650"
+                        ],
+                        [
+                            "NK 24 Q5 V",
+                            "100x 100 x50",
+                            "920580"
+                        ],
+                        [
+                            "NK 24 Q5 V",
+                            "200x 100 x50",
+                            "920680"
+                        ],
+                        [
+                            "NK 36 P5 V",
+                            "100x 50 x25",
+                            "920620"
+                        ],
+                        [
+                            "NK 36 P5 V",
+                            "100x 50 x50",
+                            "920660"
+                        ],
+                        [
+                            "NK 36 P5 V",
+                            "100x 100 x50",
+                            "920590"
+                        ],
+                        [
+                            "NK 36 P5 V",
+                            "200x 100 x50",
+                            "920690"
+                        ],
+                        [
+                            "NK 46 O5 V",
+                            "100x 50 x25",
+                            "920630"
+                        ],
+                        [
+                            "NK 46 O5 V",
+                            "100x 50 x50",
+                            "920670"
+                        ],
+                        [
+                            "NK 46 O5 V",
+                            "100x 100 x50",
+                            "920600"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Tırpan Taşı",
+                "source_url": "https://www.karbosan.com/tr/tirpan-tasi/",
+                "image_url": "https://www.karbosan.com/img/upload/K_Tirpan_Tasi_1768223006.png",
+                "types": [],
+                "methods": [
+                    "El ile Kullanım"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler",
+                    "Demir Dışı Metaller",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak",
+                    "Pirinç",
+                    "Ahşap",
+                    "Taş",
+                    "Yüksek Alaşımlı Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi",
+                    "Cam Sanayi",
+                    "Ahşap Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Evsaf",
+                        "Ebat",
+                        "Artikel"
+                    ],
+                    "rows": [
+                        [
+                            "HK 150 P5 V",
+                            "222 x 13 x 35",
+                            "913680"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Saplı Mop Ürünler",
+        "source_url": "https://www.karbosan.com/tr/sapli-mop-urunler/",
+        "products": [
+            {
+                "name": "Saplı Mop - Zımpara",
+                "source_url": "https://www.karbosan.com/tr/sapli-mop-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/Sapli_MZ_Zimpara_1768295084.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Kalite",
+                        "40",
+                        "60",
+                        "80",
+                        "100",
+                        "120",
+                        "150",
+                        "180",
+                        "220",
+                        "240",
+                        "280",
+                        "320",
+                        "400",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "20x15",
+                            "AO Zımpara",
+                            "981464",
+                            "980357",
+                            "981469",
+                            "981444",
+                            "981448",
+                            "981449",
+                            "981453",
+                            "981454",
+                            "981458",
+                            "981459",
+                            "981463",
+                            "981468",
+                            "20"
+                        ],
+                        [
+                            "20x20",
+                            "AO Zımpara",
+                            "981499",
+                            "980363",
+                            "981504",
+                            "981479",
+                            "981483",
+                            "981484",
+                            "981488",
+                            "981489",
+                            "981493",
+                            "981494",
+                            "981498",
+                            "981503",
+                            "20"
+                        ],
+                        [
+                            "20x25",
+                            "AO Zımpara",
+                            "981528",
+                            "981533",
+                            "981534",
+                            "981508",
+                            "981509",
+                            "981513",
+                            "981514",
+                            "981518",
+                            "981519",
+                            "981523",
+                            "981524",
+                            "981529",
+                            "20"
+                        ],
+                        [
+                            "25x15",
+                            "AO Zımpara",
+                            "981569",
+                            "981574",
+                            "981578",
+                            "981549",
+                            "981553",
+                            "981554",
+                            "981558",
+                            "981559",
+                            "981563",
+                            "981564",
+                            "981568",
+                            "981573",
+                            "10"
+                        ],
+                        [
+                            "25x20",
+                            "AO Zımpara",
+                            "981599",
+                            "981604",
+                            "981608",
+                            "981583",
+                            "981584",
+                            "981588",
+                            "981589",
+                            "981593",
+                            "981594",
+                            "981598",
+                            "981579",
+                            "981603",
+                            "10"
+                        ],
+                        [
+                            "20x30",
+                            "AO Zımpara",
+                            "981643",
+                            "981648",
+                            "981649",
+                            "981623",
+                            "981624",
+                            "981628",
+                            "981629",
+                            "981633",
+                            "981634",
+                            "981638",
+                            "981639",
+                            "981644",
+                            "10"
+                        ],
+                        [
+                            "30x10",
+                            "AO Zımpara",
+                            "981684",
+                            "981689",
+                            "981693",
+                            "981664",
+                            "981668",
+                            "981669",
+                            "981673",
+                            "981674",
+                            "981678",
+                            "981679",
+                            "981683",
+                            "981688",
+                            "10"
+                        ],
+                        [
+                            "30x15",
+                            "AO Zımpara",
+                            "981714",
+                            "980345",
+                            "980352",
+                            "981694",
+                            "981698",
+                            "981699",
+                            "981703",
+                            "981704",
+                            "981708",
+                            "981709",
+                            "981713",
+                            "981718",
+                            "10"
+                        ],
+                        [
+                            "30x20",
+                            "AO Zımpara",
+                            "981739",
+                            "980344",
+                            "981744",
+                            "981719",
+                            "981723",
+                            "981724",
+                            "981728",
+                            "981729",
+                            "981733",
+                            "981734",
+                            "981738",
+                            "981743",
+                            "10"
+                        ],
+                        [
+                            "30x30",
+                            "AO Zımpara",
+                            "980360",
+                            "980350",
+                            "981779",
+                            "981753",
+                            "981754",
+                            "981758",
+                            "981759",
+                            "981763",
+                            "981764",
+                            "981773",
+                            "981774",
+                            "981778",
+                            "10"
+                        ],
+                        [
+                            "40x10",
+                            "AO Zımpara",
+                            "981808",
+                            "980361",
+                            "981813",
+                            "981788",
+                            "981789",
+                            "981793",
+                            "981794",
+                            "981798",
+                            "981799",
+                            "981803",
+                            "981804",
+                            "981809",
+                            "10"
+                        ],
+                        [
+                            "40x15",
+                            "AO Zımpara",
+                            "981834",
+                            "980354",
+                            "980351",
+                            "981814",
+                            "981818",
+                            "981819",
+                            "981823",
+                            "981824",
+                            "981828",
+                            "981829",
+                            "981833",
+                            "981838",
+                            "10"
+                        ],
+                        [
+                            "40x20",
+                            "AO Zımpara",
+                            "980359",
+                            "980348",
+                            "981863",
+                            "981839",
+                            "981843",
+                            "981844",
+                            "981848",
+                            "981849",
+                            "981853",
+                            "981854",
+                            "981858",
+                            "981859",
+                            "10"
+                        ],
+                        [
+                            "40x30",
+                            "AO Zımpara",
+                            "981884",
+                            "980347",
+                            "980362",
+                            "981864",
+                            "981868",
+                            "981869",
+                            "981873",
+                            "981874",
+                            "981878",
+                            "981879",
+                            "981883",
+                            "981888",
+                            "10"
+                        ],
+                        [
+                            "50x10",
+                            "AO Zımpara",
+                            "981909",
+                            "981914",
+                            "981918",
+                            "981889",
+                            "981893",
+                            "981894",
+                            "981898",
+                            "981899",
+                            "981903",
+                            "981904",
+                            "981908",
+                            "981913",
+                            "10"
+                        ],
+                        [
+                            "50x15",
+                            "AO Zımpara",
+                            "981939",
+                            "981944",
+                            "981948",
+                            "981919",
+                            "981923",
+                            "981924",
+                            "981928",
+                            "981929",
+                            "981933",
+                            "981934",
+                            "981938",
+                            "981943",
+                            "10"
+                        ],
+                        [
+                            "50x20",
+                            "AO Zımpara",
+                            "981969",
+                            "980353",
+                            "980355",
+                            "981949",
+                            "981953",
+                            "981954",
+                            "981958",
+                            "981959",
+                            "981963",
+                            "981964",
+                            "981968",
+                            "981973",
+                            "10"
+                        ],
+                        [
+                            "50x30",
+                            "AO Zımpara",
+                            "982003",
+                            "980356",
+                            "982008",
+                            "981983",
+                            "981984",
+                            "981988",
+                            "981989",
+                            "981993",
+                            "981994",
+                            "981998",
+                            "981999",
+                            "982004",
+                            "10"
+                        ],
+                        [
+                            "60x15",
+                            "AO Zımpara",
+                            "982053",
+                            "982058",
+                            "982059",
+                            "982033",
+                            "982034",
+                            "982038",
+                            "982039",
+                            "982043",
+                            "982044",
+                            "982048",
+                            "982049",
+                            "982054",
+                            "10"
+                        ],
+                        [
+                            "60x20",
+                            "AO Zımpara",
+                            "982083",
+                            "982088",
+                            "980346",
+                            "982063",
+                            "982064",
+                            "982068",
+                            "982069",
+                            "982073",
+                            "982074",
+                            "982078",
+                            "982079",
+                            "982084",
+                            "10"
+                        ],
+                        [
+                            "60x30",
+                            "AO Zımpara",
+                            "982113",
+                            "980349",
+                            "980358",
+                            "982093",
+                            "982094",
+                            "982098",
+                            "982099",
+                            "982103",
+                            "982104",
+                            "982108",
+                            "982109",
+                            "982114",
+                            "10"
+                        ],
+                        [
+                            "60x40",
+                            "AO Zımpara",
+                            "982138",
+                            "982143",
+                            "982144",
+                            "982118",
+                            "982119",
+                            "982123",
+                            "982124",
+                            "982128",
+                            "982129",
+                            "982133",
+                            "982134",
+                            "982139",
+                            "10"
+                        ],
+                        [
+                            "80x15",
+                            "AO Zımpara",
+                            "982188",
+                            "982193",
+                            "982194",
+                            "982168",
+                            "982169",
+                            "982173",
+                            "982174",
+                            "982178",
+                            "982179",
+                            "982183",
+                            "982184",
+                            "982189",
+                            "10"
+                        ],
+                        [
+                            "80x30",
+                            "AO Zımpara",
+                            "982249",
+                            "982254",
+                            "982258",
+                            "982229",
+                            "982233",
+                            "982234",
+                            "982238",
+                            "982239",
+                            "982243",
+                            "982244",
+                            "982248",
+                            "982253",
+                            "10"
+                        ],
+                        [
+                            "80x20",
+                            "AO Zımpara",
+                            "982218",
+                            "982223",
+                            "982224",
+                            "982198",
+                            "982199",
+                            "982203",
+                            "982204",
+                            "982208",
+                            "982209",
+                            "982213",
+                            "982214",
+                            "982219",
+                            "10"
+                        ],
+                        [
+                            "80x40",
+                            "AO Zımpara",
+                            "982279",
+                            "982284",
+                            "982288",
+                            "982259",
+                            "982263",
+                            "982264",
+                            "982268",
+                            "982269",
+                            "982273",
+                            "982274",
+                            "982278",
+                            "982283",
+                            "10"
+                        ],
+                        [
+                            "80x50",
+                            "AO Zımpara",
+                            "982309",
+                            "982314",
+                            "982318",
+                            "982289",
+                            "982293",
+                            "982294",
+                            "982298",
+                            "982299",
+                            "982303",
+                            "982304",
+                            "982308",
+                            "982313",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Saplı Mop - Elyaf",
+                "source_url": "https://www.karbosan.com/tr/sapli-mop-elyaf/",
+                "image_url": "https://www.karbosan.com/img/upload/Sapli_MZ_Elyaf_1768309996.png",
+                "types": [],
+                "methods": [
+                    "Polisaj"
+                ],
+                "areas": [
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "20x15",
+                            "930086",
+                            "Afine",
+                            "20"
+                        ],
+                        [
+                            "20x20",
+                            "930087",
+                            "Afine",
+                            "20"
+                        ],
+                        [
+                            "20x25",
+                            "930088",
+                            "Afine",
+                            "20"
+                        ],
+                        [
+                            "25x15",
+                            "930093",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "25x20",
+                            "930094",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "25x30",
+                            "930095",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "30x10",
+                            "930096",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "30x15",
+                            "930097",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "30x20",
+                            "915346",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "30x30",
+                            "930103",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "40x10",
+                            "915348",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "40x15",
+                            "965432",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "40x20",
+                            "915350",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "40x30",
+                            "930106",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "50x10",
+                            "915354",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "50x15",
+                            "930107",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "50x20",
+                            "930108",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "50x30",
+                            "930109",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "60x15",
+                            "915358",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "60x20",
+                            "930113",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "60x30",
+                            "930114",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "60x40",
+                            "930107",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "80x15",
+                            "930108",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "80x20",
+                            "930109",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "80x30",
+                            "915358",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "80x40",
+                            "930113",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "80x50",
+                            "930114",
+                            "Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Saplı Mop - Elyaf Kombi",
+                "source_url": "https://www.karbosan.com/tr/sapli-mop-elyaf-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Sapli_MZ_Kombi_1768311159.png",
+                "types": [],
+                "methods": [
+                    "Polisaj"
+                ],
+                "areas": [
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "20x15",
+                            "930115",
+                            "AO Zımpara ve Afine",
+                            "20"
+                        ],
+                        [
+                            "20x20",
+                            "930116",
+                            "AO Zımpara ve Afine",
+                            "20"
+                        ],
+                        [
+                            "20x25",
+                            "930117",
+                            "AO Zımpara ve Afine",
+                            "20"
+                        ],
+                        [
+                            "25x15",
+                            "930118",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "25x20",
+                            "930119",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "25x30",
+                            "930123",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "30x10",
+                            "930124",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "30x15",
+                            "930125",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "30x20",
+                            "930126",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "30x30",
+                            "915363",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "40x10",
+                            "930127",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "40x15",
+                            "930144",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "40x20",
+                            "930128",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "40x30",
+                            "915365",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "50x10",
+                            "930129",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "50x15",
+                            "930133",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "50x20",
+                            "965433",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "50x30",
+                            "915367",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "60x15",
+                            "930134",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "60x20",
+                            "930135",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "60x30",
+                            "915371",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "60x40",
+                            "930136",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "80x15",
+                            "930137",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "80x20",
+                            "930138",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "80x30",
+                            "915375",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "80x40",
+                            "930139",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "80x50",
+                            "930143",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Saplı Mop - Keçe",
+                "source_url": "https://www.karbosan.com/tr/sapli-mop-kece/",
+                "image_url": "https://www.karbosan.com/img/upload/Sapli_MZ_Kece_1768311977.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "20x10",
+                            "955182",
+                            "Keçe",
+                            "20"
+                        ],
+                        [
+                            "20x15",
+                            "955183",
+                            "Keçe",
+                            "20"
+                        ],
+                        [
+                            "20x20",
+                            "955184",
+                            "Keçe",
+                            "20"
+                        ],
+                        [
+                            "25x10",
+                            "955185",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x15",
+                            "955186",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x20",
+                            "955187",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x25",
+                            "955188",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x15",
+                            "955189",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x20",
+                            "955190",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x25",
+                            "955191",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x30",
+                            "955192",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "35x20",
+                            "955193",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "35x30",
+                            "955194",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "40x20",
+                            "955195",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "40x30",
+                            "955196",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "50x20",
+                            "955197",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "50x30",
+                            "955198",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "60x30",
+                            "955199",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "60x40",
+                            "955200",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "80x30",
+                            "955201",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "80x40",
+                            "955202",
+                            "Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Saplı Mop - Keçe Kombi",
+                "source_url": "https://www.karbosan.com/tr/sapli-mop-kece-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Sapli_MZ_Kece_Kombi_1768312053.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "20x10",
+                            "955203",
+                            "AO Zımpara ve Keçe",
+                            "20"
+                        ],
+                        [
+                            "20x15",
+                            "955204",
+                            "AO Zımpara ve Keçe",
+                            "20"
+                        ],
+                        [
+                            "20x20",
+                            "955205",
+                            "AO Zımpara ve Keçe",
+                            "20"
+                        ],
+                        [
+                            "25x10",
+                            "955206",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x15",
+                            "955207",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x20",
+                            "955208",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "25x25",
+                            "955209",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x15",
+                            "955210",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x20",
+                            "955211",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x25",
+                            "955212",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "30x30",
+                            "955213",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "35x20",
+                            "955214",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "35x30",
+                            "955215",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "40x20",
+                            "955216",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "40x30",
+                            "955217",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "50x20",
+                            "955218",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "50x30",
+                            "955219",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "60x30",
+                            "955220",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "60x40",
+                            "955221",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "80x30",
+                            "955222",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "80x40",
+                            "955223",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Delikli Mop Ürünler",
+        "source_url": "https://www.karbosan.com/tr/delikli-mop-urunler/",
+        "products": [
+            {
+                "name": "Delikli Mop - Zımpara",
+                "source_url": "https://www.karbosan.com/tr/delikli-mop-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/Delikli_MZ_Zimpara_1768334651.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Demir Dışı Metaller",
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Kalite",
+                        "40",
+                        "60",
+                        "80",
+                        "100",
+                        "120",
+                        "150",
+                        "180",
+                        "220",
+                        "240",
+                        "280",
+                        "320",
+                        "400",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "165x30x45",
+                            "AO",
+                            "982533",
+                            "982538",
+                            "982539",
+                            "982513",
+                            "982514",
+                            "982518",
+                            "982519",
+                            "982523",
+                            "982524",
+                            "982528",
+                            "982529",
+                            "982534",
+                            "2"
+                        ],
+                        [
+                            "165x50x45",
+                            "Zımpara",
+                            "982603",
+                            "982608",
+                            "982613",
+                            "982583",
+                            "982584",
+                            "982588",
+                            "982589",
+                            "982593",
+                            "982594",
+                            "982598",
+                            "982599",
+                            "982604",
+                            "1"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Delikli Mop - Elyaf",
+                "source_url": "https://www.karbosan.com/tr/delikli-mop-elyaf/",
+                "image_url": "https://www.karbosan.com/img/upload/Delikli_MZ_Elyaf_1768313640.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Demir Dışı Metaller",
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "165x30x25",
+                            "915379",
+                            "Afine",
+                            "2"
+                        ],
+                        [
+                            "165x30x45",
+                            "915380",
+                            "Afine",
+                            "2"
+                        ],
+                        [
+                            "165x50x25",
+                            "915381",
+                            "Afine",
+                            "1"
+                        ],
+                        [
+                            "165x50x45",
+                            "915382",
+                            "Afine",
+                            "1"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Delikli Mop - Elyaf Kombi",
+                "source_url": "https://www.karbosan.com/tr/delikli-mop-elyaf-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Delikli_MZ_Kombi_1768313964.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Demir Dışı Metaller",
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "165x30x25",
+                            "987008",
+                            "AO Zımpara ve Afine",
+                            "2"
+                        ],
+                        [
+                            "165x30x45",
+                            "987009",
+                            "AO Zımpara ve Afine",
+                            "2"
+                        ],
+                        [
+                            "165x50x25",
+                            "987010",
+                            "AXFR11 ve Afine",
+                            "1"
+                        ],
+                        [
+                            "165x50x45",
+                            "987011",
+                            "AXFR11 ve Afine",
+                            "1"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Delikli Mop - Keçe",
+                "source_url": "https://www.karbosan.com/tr/delikli-mop-kece/",
+                "image_url": "https://www.karbosan.com/img/upload/Delikli_MZ_Kece_1768326971.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Demir Dışı Metaller",
+                    "Kaynak",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "165x30x25",
+                            "955224",
+                            "Keçe",
+                            "2"
+                        ],
+                        [
+                            "165x30x45",
+                            "955225",
+                            "Keçe",
+                            "2"
+                        ],
+                        [
+                            "165x50x25",
+                            "955226",
+                            "Keçe",
+                            "1"
+                        ],
+                        [
+                            "165x50x45",
+                            "955227",
+                            "Keçe",
+                            "1"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Delikli Mop - Keçe Kombi",
+                "source_url": "https://www.karbosan.com/tr/delikli-mop-kece-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Delikli_MZ_Kece_Kombi_1768327128.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Demir Dışı Metaller",
+                    "Kaynak",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "165x30x25",
+                            "955228",
+                            "AO Zımpara ve Keçe",
+                            "2"
+                        ],
+                        [
+                            "165x30x45",
+                            "955229",
+                            "AO Zımpara ve Keçe",
+                            "2"
+                        ],
+                        [
+                            "165x50x25",
+                            "955230",
+                            "AJR11 ve Keçe",
+                            "1"
+                        ],
+                        [
+                            "165x50x45",
+                            "955231",
+                            "AJR11 ve Keçe",
+                            "1"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Flap Tipi Mop Ürünler",
+        "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-urunler/",
+        "products": [
+            {
+                "name": "Flap Tipi Mop - Elyaf",
+                "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-elyaf/",
+                "image_url": "https://www.karbosan.com/img/upload/Flap_Tipi_MZ_Elyaf_1768331468.png",
+                "types": [],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x22.23",
+                            "915342",
+                            "Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Flap Tipi Mop - Elyaf Kombi",
+                "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-elyaf-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Flap_Tipi_MZ_Elyaf_1768331813.png",
+                "types": [],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x22.23",
+                            "986980",
+                            "AO Zım. ve Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Flap Tipi Mop - Keçe",
+                "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-kece/",
+                "image_url": "https://www.karbosan.com/img/upload/Flap_Tipi_MZ_Kece_1768332001.png",
+                "types": [],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x22.23",
+                            "955234",
+                            "Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Flap Tipi Mop - Keçe Kombi",
+                "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-kece-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Flap_Tipi_MZ_Kece_Kombi_1768332218.png",
+                "types": [],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x22.23",
+                            "955235",
+                            "AO Zım. ve Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Flap Tipi Mop - Yüzey Kazıma Diski",
+                "source_url": "https://www.karbosan.com/tr/flap-tipi-mop-yuzey-kazima-diski/",
+                "image_url": "https://www.karbosan.com/img/upload/Flap_Tipi_MZ_Yuzey_Kazima_Diski_1768332283.png",
+                "types": [],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Çelikler",
+                    "Paslanmaz Çelik (Inox)",
+                    "Kaynak"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x22.23",
+                            "955236",
+                            "Silicon Carbide",
+                            "10"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Kamalı Mop Ürünler",
+        "source_url": "https://www.karbosan.com/tr/kamali-mop-urunler/",
+        "products": [
+            {
+                "name": "Kamalı Mop - Zımpara",
+                "source_url": "https://www.karbosan.com/tr/kamali-mop-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/Kamali_MZ_Zimpara_1768327408.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Kalite",
+                        "40",
+                        "60",
+                        "80",
+                        "100",
+                        "120",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "100x100x19",
+                            "AO Zımpara",
+                            "982424",
+                            "982444",
+                            "982448",
+                            "982419",
+                            "982423",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Kamalı Mop - Elyaf",
+                "source_url": "https://www.karbosan.com/tr/kamali-mop-elyaf/",
+                "image_url": "https://www.karbosan.com/img/upload/Kamali_MZ_Elyaf_1768327938.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Çelikler",
+                    "Demir Dışı Metaller"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "100x100x19",
+                            "915388",
+                            "Afine",
+                            "2"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Kamalı Mop - Elyaf Kombi",
+                "source_url": "https://www.karbosan.com/tr/kamali-mop-elyaf-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Kamali_MZ_Kombi_1768330970.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Çelikler",
+                    "Demir Dışı Metaller"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "100x100x19",
+                            "987012",
+                            "AO Zım. ve Afine",
+                            "2"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Kamalı Mop - Keçe",
+                "source_url": "https://www.karbosan.com/tr/kamali-mop-kece/",
+                "image_url": "https://www.karbosan.com/img/upload/Kamali_MZ_Kece_1768331106.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Çelikler",
+                    "Demir Dışı Metaller",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "100x100x19",
+                            "955232",
+                            "Keçe",
+                            "2"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Kamalı Mop - Keçe Kombi",
+                "source_url": "https://www.karbosan.com/tr/kamali-mop-kece-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Kamali_MZ_Kece_Kombi_1768331183.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Çelikler",
+                    "Demir Dışı Metaller",
+                    "Paslanmaz Çelik (Inox)"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "100x100x19",
+                            "955233",
+                            "AO Zım. ve Keçe",
+                            "2"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Vidalı Mop Ürünler",
+        "source_url": "https://www.karbosan.com/tr/vidali-mop-urunler/",
+        "products": [
+            {
+                "name": "Vidalı Mop - Zımpara",
+                "source_url": "https://www.karbosan.com/tr/vidali-mop-zimpara/",
+                "image_url": "https://www.karbosan.com/img/upload/Vidali_Mop_Zimpara_1768332918.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Kalite",
+                        "40",
+                        "60",
+                        "80",
+                        "100",
+                        "120",
+                        "150",
+                        "180",
+                        "220",
+                        "240",
+                        "280",
+                        "320",
+                        "400",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x20xM14",
+                            "AO Zımpara",
+                            "982469",
+                            "982474",
+                            "982478",
+                            "982449",
+                            "982453",
+                            "982454",
+                            "982458",
+                            "982459",
+                            "982463",
+                            "982464",
+                            "982468",
+                            "982473",
+                            "10"
+                        ],
+                        [
+                            "115x20xM14",
+                            "ZR Zımpara",
+                            "955250",
+                            "955251",
+                            "955252",
+                            "955253",
+                            "955254",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Vidalı Mop - Elyaf",
+                "source_url": "https://www.karbosan.com/tr/vidali-mop-elyaf/",
+                "image_url": "https://www.karbosan.com/img/upload/Vidali_Mop_Elyaf_1768333601.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x20xM14",
+                            "955255",
+                            "Afine",
+                            "10"
+                        ],
+                        [
+                            "115x30xM14",
+                            "955256",
+                            "Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Vidalı Mop - Elyaf Kombi",
+                "source_url": "https://www.karbosan.com/tr/vidali-mop-elyaf-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Vidali_Mop_Elyaf_1768333826.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x20xM14",
+                            "987013",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ],
+                        [
+                            "115x30xM14",
+                            "987014",
+                            "AO Zımpara ve Afine",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Vidalı Mop - Keçe",
+                "source_url": "https://www.karbosan.com/tr/vidali-mop-kece/",
+                "image_url": "https://www.karbosan.com/img/upload/Vidali_Mop_Kece_1768334061.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x20xM14",
+                            "955259",
+                            "Keçe",
+                            "10"
+                        ],
+                        [
+                            "115x30xM14",
+                            "955260",
+                            "Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Vidalı Mop - Keçe Kombi",
+                "source_url": "https://www.karbosan.com/tr/vidali-mop-kece-kombi/",
+                "image_url": "https://www.karbosan.com/img/upload/Vidali_Mop_Kece_Kombi_1768334575.png",
+                "types": [],
+                "methods": [
+                    "Mop Zımpara Makinası"
+                ],
+                "areas": [
+                    "Dökme Çelik",
+                    "Kaynak",
+                    "Paslanmaz Çelik (Inox)",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Makina Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Çap",
+                        "Artikel",
+                        "Kalite",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "115x20xM14",
+                            "955261",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ],
+                        [
+                            "115x20xM14",
+                            "955262",
+                            "AO Zımpara ve Keçe",
+                            "10"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "Elmas Kesiciler",
+        "source_url": "https://www.karbosan.com/tr/elmas-kesiciler/",
+        "products": [
+            {
+                "name": "P-Edge Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/pedge-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/P-edge_diamond_035076_800px_1783330306.png",
+                "types": [
+                    "Normal"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Mermer",
+                    "Seramik",
+                    "Fayans",
+                    "Porselen"
+                ],
+                "sectors": [
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115x 1.6 x22.23",
+                            "035076",
+                            "1"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Segmentli Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/segmentli-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/E_230_Segmented (1)_1767730371.png",
+                "types": [
+                    "Normal",
+                    "Flanşlı"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Seramik"
+                ],
+                "sectors": [
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115 x 2.0 x 22.23",
+                            "950110",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "180x 2.2 x22.23",
+                            "950120",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "230x 2.4 x22.23",
+                            "950130",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Flanşlı",
+                            "180x 2.2 x22.23",
+                            "950140",
+                            "1",
+                            "-"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "İnce Turbo Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/ince-turbo-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/E_115x0.8_Turbo_1767732029.png",
+                "types": [
+                    "Normal"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Seramik"
+                ],
+                "sectors": [
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115 x 0.8 x22.23",
+                            "912048",
+                            "1",
+                            "-"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Turbo Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/turbo-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/E_230_Turbo_1767730991.png",
+                "types": [
+                    "Normal",
+                    "Flanşlı"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Mermer",
+                    "Seramik"
+                ],
+                "sectors": [
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115 x 2.0 x 22.23",
+                            "950310",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "180x 2.2 x22.23",
+                            "950320",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "230x 2.4 x22.23",
+                            "950330",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Flanşlı",
+                            "180x 2.2 x22.23",
+                            "950340",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Flanşlı",
+                            "230x 2.4 x22.23",
+                            "950350",
+                            "1",
+                            "-"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Sürekli Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/surekli-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/E_230_Continuous_Rim_1767732366.png",
+                "types": [
+                    "Normal"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Seramik"
+                ],
+                "sectors": [
+                    "Yapı Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115x 1.8 x22.23",
+                            "950210",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "180x 2.0 x22.23",
+                            "950220",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "230x 2.3 x22.23",
+                            "950230",
+                            "1",
+                            "-"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "Turbo Kanallı Elmas Kesici",
+                "source_url": "https://www.karbosan.com/tr/turbo-kanalli-elmas-kesici/",
+                "image_url": "https://www.karbosan.com/img/upload/E_230_Wave_Turbo_1767731390.png",
+                "types": [
+                    "Normal",
+                    "Flanşlı"
+                ],
+                "methods": [
+                    "Taşlama Motoru"
+                ],
+                "areas": [
+                    "Granit",
+                    "Mermer",
+                    "Seramik"
+                ],
+                "sectors": [
+                    "Yapı Sanayi",
+                    "Cam Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı",
+                        "Koli Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "Normal",
+                            "115 x 2.2 x 22.23",
+                            "950410",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "180x 2.4 x22.23",
+                            "950420",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Normal",
+                            "230x 2.6 x22.23",
+                            "950430",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Flanşlı",
+                            "180x 2.4 x22.23",
+                            "950440",
+                            "1",
+                            "-"
+                        ],
+                        [
+                            "Flanşlı",
+                            "230x 2.6 x22.23",
+                            "950450",
+                            "1",
+                            "-"
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "group": "UltraCut Frezeler",
+        "source_url": "https://www.karbosan.com/tr/ultracut-frezeler/",
+        "products": [
+            {
+                "name": "A Tipi Silindir Düz UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/a-tipi-silindir-duz-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/A_Silindir_Duz_1738921363.png",
+                "types": [
+                    "A"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "A",
+                            "06 x 16 x 61 - Ø 06",
+                            "033498",
+                            "25"
+                        ],
+                        [
+                            "A",
+                            "08 x 20 x 65 - Ø 06",
+                            "032679",
+                            "25"
+                        ],
+                        [
+                            "A",
+                            "10 x 20 x 65 - Ø 06",
+                            "032680",
+                            "25"
+                        ],
+                        [
+                            "A",
+                            "12 x 25 x 70 - Ø 06",
+                            "033499",
+                            "25"
+                        ],
+                        [
+                            "A",
+                            "16 x 25 x 70 - Ø 06",
+                            "033500",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "B Tipi Silindir Alın Kesmeli UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/b-tipi-silindir-alin-kesmeli-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/B_Silindir_Alin_Kesmeli_1738941243.png",
+                "types": [],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Isıya Duyarlı Çelikler",
+                    "Demir Dışı Metaller",
+                    "Düşük Alaşımlı Çelikler",
+                    "Plastik",
+                    "Çelikler"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "B",
+                            "06 x 16 x 61 - Ø 06",
+                            "033501",
+                            "25"
+                        ],
+                        [
+                            "B",
+                            "08 x 20 x 65 - Ø 06",
+                            "032684",
+                            "25"
+                        ],
+                        [
+                            "B",
+                            "10 x 20 x 65 - Ø 06",
+                            "032685",
+                            "25"
+                        ],
+                        [
+                            "B",
+                            "12 x 25 x 70 - Ø 06",
+                            "033502",
+                            "25"
+                        ],
+                        [
+                            "B",
+                            "16 x 25 x 70 - Ø 06",
+                            "033503",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "C Tipi Silindir Oval Başlı UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/c-tipi-silindir-oval-basli-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/C_Silindir_Oval_Basli_1738943165.png",
+                "types": [
+                    "C"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "C",
+                            "06 x 16 x 61 - Ø 06",
+                            "033504",
+                            "25"
+                        ],
+                        [
+                            "C",
+                            "08 x 20 x 65 - Ø 06",
+                            "032689",
+                            "25"
+                        ],
+                        [
+                            "C",
+                            "10 x 20 x 65 - Ø 06",
+                            "032690",
+                            "25"
+                        ],
+                        [
+                            "C",
+                            "12 x 25 x 70 - Ø 06",
+                            "033505",
+                            "25"
+                        ],
+                        [
+                            "C",
+                            "16 x 25 x 70 - Ø 06",
+                            "033506",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "D Tipi Küre Başlı UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/d-tipi-kure-basli-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/D_Kure_Basli_1739141000.png",
+                "types": [
+                    "D"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "D",
+                            "06 x 05 x 50 - Ø 06",
+                            "033507",
+                            "25"
+                        ],
+                        [
+                            "D",
+                            "08 x 07 x 52 - Ø 06",
+                            "033508",
+                            "25"
+                        ],
+                        [
+                            "D",
+                            "10 x 09 x 54 - Ø 06",
+                            "033509",
+                            "25"
+                        ],
+                        [
+                            "D",
+                            "12 x 10 x 55 - Ø 06",
+                            "033510",
+                            "25"
+                        ],
+                        [
+                            "D",
+                            "16 x 14 x 59 - Ø 06",
+                            "033511",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "E Tipi Oval Gövdeli UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/e-tipi-oval-govdeli-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/E_Oval_Govdeli_1739141378.png",
+                "types": [
+                    "E"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "E",
+                            "06 x 10 x 55 - Ø 06",
+                            "033512",
+                            "25"
+                        ],
+                        [
+                            "E",
+                            "08 x 13 x 58 - Ø 06",
+                            "033513",
+                            "25"
+                        ],
+                        [
+                            "E",
+                            "10 x 16 x 61 - Ø 06",
+                            "033514",
+                            "25"
+                        ],
+                        [
+                            "E",
+                            "12 x 20 x 65 - Ø 06",
+                            "032701",
+                            "25"
+                        ],
+                        [
+                            "E",
+                            "16 x 25 x 70 - Ø 06",
+                            "033515",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "F Tipi Küre Uçlu Çam UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/f-tipi-kure-uclu-cam-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/F_Kure_Uclu_Cam_1739141649.png",
+                "types": [
+                    "F"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Dökme Çelik",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "F",
+                            "06 x 18 x 63 - Ø 06",
+                            "033516",
+                            "25"
+                        ],
+                        [
+                            "F",
+                            "08 x 20 x 65 - Ø 06",
+                            "032704",
+                            "25"
+                        ],
+                        [
+                            "F",
+                            "10 x 20 x 65 - Ø 06",
+                            "032705",
+                            "25"
+                        ],
+                        [
+                            "F",
+                            "12 x 25 x 70 - Ø 06",
+                            "033517",
+                            "25"
+                        ],
+                        [
+                            "F",
+                            "16 x 25 x 70 - Ø 06",
+                            "033518",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "G Tipi Sivri Uçlu Çam UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/g-tipi-sivri-uclu-cam-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/G_Sivri_Uclu_Cam_1739142027.png",
+                "types": [
+                    "G"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "G",
+                            "06 x 18 x 63 - Ø 06",
+                            "033519",
+                            "25"
+                        ],
+                        [
+                            "G",
+                            "08 x 20 x 65 - Ø 06",
+                            "033594",
+                            "25"
+                        ],
+                        [
+                            "G",
+                            "10 x 20 x 65 - Ø 06",
+                            "032710",
+                            "25"
+                        ],
+                        [
+                            "G",
+                            "12 x 25 x 70 - Ø 06",
+                            "033520",
+                            "25"
+                        ],
+                        [
+                            "G",
+                            "16 x 25 x 70 - Ø 06",
+                            "033521",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "H Tipi Alev UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/h-tipi-alev-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/H_Alev_1739142282.png",
+                "types": [
+                    "H"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "H",
+                            "06 x 18 x 63 - Ø 06",
+                            "033522",
+                            "25"
+                        ],
+                        [
+                            "H",
+                            "08 x 20 x 65 - Ø 06",
+                            "032714",
+                            "25"
+                        ],
+                        [
+                            "H",
+                            "10 x 25 x 70 - Ø 06",
+                            "033595",
+                            "25"
+                        ],
+                        [
+                            "H",
+                            "12 x 32 x 77 - Ø 06",
+                            "033524",
+                            "25"
+                        ],
+                        [
+                            "H",
+                            "16 x 36 x 81 - Ø 06",
+                            "033595",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "L Tipi Küre Uçlu Konik UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/l-tipi-kure-uclu-konik-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/L_Kure_Uclu_Konik_1739142631.png",
+                "types": [
+                    "L"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "L",
+                            "06 x 16 x 61 - Ø 06",
+                            "033526",
+                            "25"
+                        ],
+                        [
+                            "L",
+                            "08 x 22 x 67 - Ø 06",
+                            "033530",
+                            "25"
+                        ],
+                        [
+                            "L",
+                            "10 x 25 x 70 - Ø 06",
+                            "033528",
+                            "25"
+                        ],
+                        [
+                            "L",
+                            "12 x 28 x 73 - Ø 06",
+                            "033529",
+                            "25"
+                        ],
+                        [
+                            "L",
+                            "16 x 33 x 78 - Ø 06",
+                            "033530",
+                            "20"
+                        ]
+                    ]
+                }
+            },
+            {
+                "name": "M Tipi Sivri Uçlu Konik UltraCut Freze",
+                "source_url": "https://www.karbosan.com/tr/m-tipi-sivri-uclu-konik-ultracut-freze/",
+                "image_url": "https://www.karbosan.com/img/upload/M_Sivri_Uclu_Konik_1739142720.png",
+                "types": [
+                    "M"
+                ],
+                "methods": [],
+                "areas": [
+                    "Ahşap",
+                    "Alüminyum / Zamak",
+                    "Bakır",
+                    "Bronz",
+                    "Demir İçermeyen Metaller",
+                    "Dökme Demir",
+                    "Düşük Alaşımlı Çelikler",
+                    "Kaynak Çapakları",
+                    "Paslanmaz Çelik (Inox)",
+                    "Pirinç",
+                    "Plastik/ Kauçuk/ Deri"
+                ],
+                "sectors": [
+                    "Ahşap Sanayi",
+                    "Metal Sanayi",
+                    "Otomotiv Sanayi",
+                    "Plastik Sanayi",
+                    "Yapı Sanayi"
+                ],
+                "table": {
+                    "headers": [
+                        "Tip",
+                        "Ebat",
+                        "Artikel",
+                        "Kutu Miktarı"
+                    ],
+                    "rows": [
+                        [
+                            "M",
+                            "06 x 18 x 63 - Ø 06",
+                            "033531",
+                            "25"
+                        ],
+                        [
+                            "M",
+                            "08 x 20 x 65 - Ø 06",
+                            "033596",
+                            "25"
+                        ],
+                        [
+                            "M",
+                            "10 x 20 x 65 - Ø 06",
+                            "032725",
+                            "25"
+                        ],
+                        [
+                            "M",
+                            "12 x 25 x 70 - Ø 06",
+                            "033532",
+                            "25"
+                        ],
+                        [
+                            "M",
+                            "16 x 25 x 70 - Ø 06",
+                            "033533",
+                            "20"
                         ]
                     ]
                 }

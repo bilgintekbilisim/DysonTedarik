@@ -8,17 +8,31 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
- * Karbosan ürün grupları ve serileri (data/karbosan.json).
+ * Karbosan ürün grupları ve serileri (data/karbosan.json) ve ürün görselleri (assets/karbosan/<slug>.webp).
  * Veri karbosan.com ürün sayfalarındaki olgusal bilgilerden derlenmiştir: ürün adı, grup, ürün tipi,
  * uygulama alanı/metodu, sektör ve ebat/artikel tablosu. Açıklamalar bu bilgilerden üretilir;
- * üreticinin tanıtım metinleri kopyalanmaz. Görseller eklenmez (kullanım izni panelden yüklenerek verilir).
- * Tekrar çalıştırılabilir; mevcut ürünlere (koda göre) dokunmaz.
+ * üreticinin tanıtım metinleri kopyalanmaz. Görseller Dyson Tedarik'in bayisi olduğu üreticinin ürün görselleridir.
+ * Tekrar çalıştırılabilir: eksik grup ve serileri ekler, görseli olmayan seriye görsel bağlar;
+ * mevcut ürünlerin panelde düzenlenmiş bilgilerine dokunmaz.
  */
 class KarbosanCatalogSeeder extends Seeder
 {
+    private const ASSETS = __DIR__.'/assets/karbosan';
+
+    /** İlk sürümün kök kategori metinleri; panelde değiştirilmemişse güncel grup listesiyle yenilenir. */
+    private const OLD_ROOT_SUMMARY = 'Kesme ve taşlama diskleri, taşlama taşları, bant ve rulo zımparalar, flap, fiber, cırtlı ve vidalı diskler.';
+
+    private const ROOT_SUMMARY = 'Kesme ve taşlama diskleri, taşlama taşları, zımparalar, flap, fiber, cırtlı ve vidalı diskler, mop ürünler, elmas kesiciler ve UltraCut frezeler.';
+
+    private const ROOT_DESCRIPTION = '<p>Karbosan ürün grupları: kesme diskleri, taşlama diskleri, taşlama taşları, testere ve takım bileme taşları, '
+        .'bant, rulo, disk ve tabaka zımparalar, flap diskler, fiber diskler, cırtlı diskler, vidalı diskler, mop ürünler, '
+        .'elmas kesiciler ve UltraCut frezeler. '
+        .'Her ürün sayfasında ebat, artikel ve ambalaj bilgileri yer alır; ihtiyacınız olan ebat için teklif isteyebilirsiniz.</p>';
+
     /** Grup adı => tekil ürün tanımı (açıklama cümlesinde kullanılır). */
     private const SINGULAR = [
         'Kesme Diskleri' => 'kesme diski',
@@ -32,6 +46,16 @@ class KarbosanCatalogSeeder extends Seeder
         'Fiber Diskler' => 'fiber disk',
         'Cırtlı Diskler' => 'cırtlı disk',
         'Vidalı Diskler' => 'vidalı disk',
+        'Disk Zımparalar' => 'disk zımpara',
+        'Tabaka Zımparalar' => 'tabaka zımpara',
+        'Seramik Taşlama Taşları' => 'seramik bağlayıcılı taşlama taşı',
+        'Saplı Mop Ürünler' => 'saplı mop',
+        'Delikli Mop Ürünler' => 'delikli mop',
+        'Flap Tipi Mop Ürünler' => 'flap tipi mop',
+        'Kamalı Mop Ürünler' => 'kamalı mop',
+        'Vidalı Mop Ürünler' => 'vidalı mop',
+        'Elmas Kesiciler' => 'elmas kesici',
+        'UltraCut Frezeler' => 'UltraCut freze',
     ];
 
     /** @var array<string, ProductAttribute> */
@@ -50,14 +74,16 @@ class KarbosanCatalogSeeder extends Seeder
         ]);
 
         $root = Category::withTrashed()->firstOrCreate(['name' => 'Karbosan', 'parent_id' => null], [
-            'summary' => 'Kesme ve taşlama diskleri, taşlama taşları, bant ve rulo zımparalar, flap, fiber, cırtlı ve vidalı diskler.',
-            'description' => '<p>Karbosan ürün grupları: kesme diskleri, taşlama diskleri, taşlama taşları, testere ve takım bileme taşları, '
-                .'bant ve rulo zımparalar, flap diskler, fiber diskler, cırtlı diskler ve vidalı diskler. '
-                .'Her ürün sayfasında ebat, artikel ve ambalaj bilgileri yer alır; ihtiyacınız olan ebat için teklif isteyebilirsiniz.</p>',
+            'summary' => self::ROOT_SUMMARY,
+            'description' => self::ROOT_DESCRIPTION,
             'is_active' => true,
             'show_in_menu' => true,
             'sort_order' => 5,
         ]);
+
+        if ($root->summary === self::OLD_ROOT_SUMMARY) {
+            $root->update(['summary' => self::ROOT_SUMMARY, 'description' => self::ROOT_DESCRIPTION]);
+        }
 
         foreach ($data as $groupIndex => $group) {
             $category = Category::withTrashed()->firstOrCreate(
@@ -75,7 +101,9 @@ class KarbosanCatalogSeeder extends Seeder
     {
         $code = 'KRB-'.Str::upper(Str::limit(Str::slug($item['name'], '-', 'tr'), 90, ''));
 
-        if (Product::withTrashed()->where('code', $code)->exists()) {
+        if ($existing = Product::withTrashed()->where('code', $code)->first()) {
+            $this->image($existing, $item['name']);
+
             return;
         }
 
@@ -113,6 +141,32 @@ class KarbosanCatalogSeeder extends Seeder
         }
 
         $product->attributeValues()->sync(array_unique($values));
+        $this->image($product, $item['name']);
+    }
+
+    /** Ürünün hiç görseli yoksa paketteki görseli yükleme klasörüne kopyalayıp bağlar. */
+    private function image(Product $product, string $name): void
+    {
+        $file = self::imageSlug($name).'.webp';
+        if ($product->images()->exists() || ! is_file(self::ASSETS.'/'.$file)) {
+            return;
+        }
+
+        $target = "products/karbosan/{$file}";
+        $disk = Storage::disk('public');
+        if (! $disk->exists($target)) {
+            $disk->put($target, file_get_contents(self::ASSETS.'/'.$file));
+        }
+
+        $product->images()->create(['path' => $target, 'alt' => $name, 'sort_order' => 0]);
+    }
+
+    /** Görsel dosya adı: ürün adının ASCII slug'ı ("%100" → "yuzde-100"). Dosyalar bu kuralla adlandırıldı. */
+    private static function imageSlug(string $name): string
+    {
+        $name = strtr($name, ['ç' => 'c', 'Ç' => 'c', 'ğ' => 'g', 'Ğ' => 'g', 'ı' => 'i', 'İ' => 'i', 'ö' => 'o', 'Ö' => 'o', 'ş' => 's', 'Ş' => 's', 'ü' => 'u', 'Ü' => 'u', '%' => ' yuzde ']);
+
+        return trim(strtolower(preg_replace('/[^A-Za-z0-9]+/', '-', $name)), '-');
     }
 
     private function description(array $item, string $group, ?array $table): string
